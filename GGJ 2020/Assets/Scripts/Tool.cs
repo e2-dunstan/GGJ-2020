@@ -12,9 +12,21 @@ public class Tool : MonoBehaviour
         spawn = tool.transform.position;
     }
 
+    private void Update()
+    {
+        if (transform.childCount <= 0)
+        {
+            GameObject newTool = Instantiate(tool, transform);
+            newTool.transform.position = spawn;
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
-        GameObject newTool = Instantiate(tool, transform);
-        newTool.transform.position = spawn;
+        if (other.gameObject.name.Contains(tool.name))
+        {
+            GameObject newTool = Instantiate(tool, transform);
+            newTool.transform.position = spawn;
+        }
     }
 }
