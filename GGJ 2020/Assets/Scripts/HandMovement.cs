@@ -5,21 +5,31 @@ using UnityEngine;
 
 public class HandMovement : MonoBehaviour
 {
+    [SerializeField] int ID = 0;
+
     private float startingHeight = 0.0f;
     private float horizontalMove = 0.0f;
     private float verticalMove = 0.0f;
 
     private float movementSpeed = 5.0f;
+    private float acceleration = 1.0f;
 
-    public Transform itemTouching = null;
+    private Transform itemTouching = null;
 
-    public bool grabbing = false;
+    private bool grabbing = false;
+
+    private string horizontalAxisString = "Horizontal";
+    private string verticalAxisString = "Vertical";
+    private string LTriggerAxisString = "TriggerL1";
+    private string RTriggerAxisString = "TriggerR1";
 
     // Start is called before the first frame update
     void Start()
     {
         startingHeight = transform.position.y;
-    }
+
+        AssignStrings();
+    }    
 
     // Update is called once per frame
     void Update()
@@ -33,7 +43,7 @@ public class HandMovement : MonoBehaviour
     {
         if (!grabbing)
         {
-            if (Input.GetAxis("TriggerR1") > 0)
+            if (Input.GetAxis(RTriggerAxisString) > 0)
             {
                 if (itemTouching)
                 {
@@ -44,39 +54,63 @@ public class HandMovement : MonoBehaviour
         }
         else
         {
-            if (Input.GetAxis("TriggerR1") == 0)
+            if (Input.GetAxis(RTriggerAxisString) == 0)
             {
                 grabbing = false;
-                itemTouching.transform.parent = null;
-                itemTouching = null;
+
+                if (itemTouching)
+                {
+                    itemTouching.transform.parent = null;
+                    itemTouching = null;
+                }
             }
         }
     }
 
     private void Movement()
     {
+        if (horizontalMove != 0 || verticalMove != 0)
+        {            
+            if (acceleration < 2.0f)
+            {
+                acceleration += 0.02f;
+            }
+        }
+        else
+        {
+            if (acceleration > 1.0f)
+            {
+                acceleration -= 0.01f;
+            }
+        }
+
         Vector3 move = new Vector3(0, 0, 0);
         move.x = horizontalMove;
         move.z = verticalMove;        
-        transform.Translate(move * movementSpeed * Time.deltaTime);
+        transform.Translate(move * (movementSpeed * acceleration) * Time.deltaTime);
 
         Vector3 depthMove = transform.position;
-        depthMove.y = startingHeight - Input.GetAxisRaw("TriggerL1");
+        depthMove.y = startingHeight - Input.GetAxis(LTriggerAxisString);
 
         transform.position = depthMove;
+
+        
     }
 
     private void GetMovementInput()
     {
-        horizontalMove = Input.GetAxis("Horizontal");
-        verticalMove = Input.GetAxis("Vertical");
+        horizontalMove = Input.GetAxis(horizontalAxisString);
+        verticalMove = Input.GetAxis(verticalAxisString);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Grabbable")
+        if (!grabbing)
         {
-            itemTouching = other.transform;            
+            if (other.tag == "Grabbable")
+            {
+                itemTouching = other.transform;
+            }
         }
     }
 
@@ -84,7 +118,44 @@ public class HandMovement : MonoBehaviour
     {
         if (other.transform == itemTouching)
         {
+            if (grabbing)
+            {
+                grabbing = false;
+                itemTouching.transform.parent = null;
+            }
+
             itemTouching = null;
+        }
+    }
+
+    private void AssignStrings()
+    {
+        switch (ID)
+        {
+            case 0:
+                horizontalAxisString = "Horizontal";
+                verticalAxisString = "Vertical";
+                LTriggerAxisString = "TriggerL1";
+                RTriggerAxisString = "TriggerR1";
+                break;
+            case 1:
+                horizontalAxisString = "Horizontal2";
+                verticalAxisString = "Vertical2";
+                LTriggerAxisString = "TriggerL2";
+                RTriggerAxisString = "TriggerR2";
+                break;
+            case 2:
+                horizontalAxisString = "Horizontal3";
+                verticalAxisString = "Vertical3";
+                LTriggerAxisString = "TriggerL3";
+                RTriggerAxisString = "TriggerR3";
+                break;
+            case 3:
+                horizontalAxisString = "Horizontal4";
+                verticalAxisString = "Vertical4";
+                LTriggerAxisString = "TriggerL4";
+                RTriggerAxisString = "TriggerR4";
+                break;
         }
     }
 }
