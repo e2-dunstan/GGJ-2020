@@ -3,7 +3,12 @@ guid: a331cea6bc86b2c42a7df4c961443b4c
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: liver
+    second: {fileID: 2100000, guid: 9c04d46d3c4550c4e8aa38096d364986, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
