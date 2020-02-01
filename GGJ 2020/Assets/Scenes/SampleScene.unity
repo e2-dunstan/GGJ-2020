@@ -444,6 +444,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a011359be6ad3848a29237f0114066d, type: 3}
+--- !u!1001 &1113751656368367225
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4074037852494485268, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_Name
+      value: Tool_Tape
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646296746892647810, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423515593260464235, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423515593260464235, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423515593260464235, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423515593260464235, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423515593260464235, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423515593260464235, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423515593260464235, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423515593260464235, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423515593260464235, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423515593260464235, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423515593260464235, guid: 0b89d9a13e65a1a40a9591a254fcfd86,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b89d9a13e65a1a40a9591a254fcfd86, type: 3}
 --- !u!1001 &4333975386374225189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -584,6 +658,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tool_Knife
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785135768460564181, guid: bef11c570c52a6e4cb2d60f3cd53449a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bef11c570c52a6e4cb2d60f3cd53449a, type: 3}

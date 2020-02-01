@@ -9,6 +9,7 @@
 /GGJ 2020/[Bb]uilds/
 /GGJ 2020/[Ll]ogs/
 /GGJ 2020/[Mm]emoryCaptures/
+/GGJ 2020/ProjectSettings/ProjectVersion.txt
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
