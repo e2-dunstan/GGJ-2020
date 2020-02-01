@@ -7,6 +7,7 @@ public class BloodColliison : MonoBehaviour
 
     [SerializeField] private GameObject bloodPrefab;
     [SerializeField] private ParticleSystem particleSystem;
+
     public List<ParticleCollisionEvent> collisionEvents;
     private Vector3 objectRotation = new Vector3(-90, 0, 0);
     private Vector3 rot = new Vector3(0, 0, 0);
