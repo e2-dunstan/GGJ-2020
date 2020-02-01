@@ -57,7 +57,7 @@ public class SpawnOrgans : MonoBehaviour
         GameObject foreign = Instantiate(foreigns[Random.Range(0, foreigns.Length - 1)], transform);
         foreign.transform.position = RandomPosition();
         Body.Part newPart = new Body.Part();
-        newPart.obj = foreign;
+        newPart.obj = foreign.GetComponent<Grabbable>();
         body.partsToRemove.Add(newPart);
     }
 }
