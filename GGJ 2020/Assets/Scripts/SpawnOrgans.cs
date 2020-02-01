@@ -41,6 +41,8 @@ public class SpawnOrgans : MonoBehaviour
         {
             AddForeign();
         }
+
+        body.initialised = true;
     }
 
     private Vector3 RandomPosition()

@@ -13,8 +13,12 @@ public class Body : MonoBehaviour
     [HideInInspector] public List<Part> partsToRemove;
     [HideInInspector] public bool complete = false;
 
+    [HideInInspector] public bool initialised = false;
+
     private void Update()
     {
+        if (!initialised) return;
+
         for(int i = 0; i < partsToRemove.Count; i++)
         {
             if (!partsToRemove[i].obj.attached)
