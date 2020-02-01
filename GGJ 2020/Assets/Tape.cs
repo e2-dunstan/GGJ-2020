@@ -5,46 +5,111 @@ using UnityEngine;
 public class Tape : MonoBehaviour
 {
     public GameObject linePrefab;
-    private LineRenderer line;
+    private LineRenderer line = null;
     private Grabbable grabbable;
 
     private bool drawing = false;
     private Vector3[] drawStartEnd = new Vector3[2];
+
+    public LayerMask tapeableLayer;
+    public float chestHeight = 0.1f;
 
     private void Awake()
     {
         grabbable = GetComponent<Grabbable>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void Update()
     {
-        if (grabbable.attached && collision.gameObject.tag == "Tape-able")
+        if (Input.GetAxis("Submit") != 0 && grabbable.GetIsGrabbed())
         {
-            drawing = true;
-            drawStartEnd[0] = collision.GetContact(0).point;
-        }
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (drawing && grabbable.attached && collision.gameObject.tag == "Tape-able")
-        {
-            drawStartEnd[1] = collision.GetContact(0).point;
-
-            if (!line.gameObject.activeInHierarchy || line == null)
+            if (!drawing)
             {
-                line = Instantiate(linePrefab).GetComponent<LineRenderer>();
+                if (line == null || !line.gameObject.activeInHierarchy)
+                {
+                    line = Instantiate(linePrefab, null).GetComponent<LineRenderer>();
+                }
+                drawStartEnd[0] = GetPosition();
             }
+            drawStartEnd[1] = GetPosition();
+
             line.SetPositions(drawStartEnd);
+
+            drawing = true;
+        }
+        else if (!grabbable.GetIsGrabbed() || (drawing && Input.GetAxis("Submit") == 0))
+        {
+            line = null;
+            drawing = false;
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private Vector3 GetPosition()
     {
-        if (drawing && collision.gameObject.tag == "Tape-able")
+        RaycastHit hit;
+        Vector3 origin = transform.position + new Vector3(0, 3, 0);
+        if (Physics.Raycast(origin, Vector3.down, out hit, 10))
         {
-            drawing = false;
-            line = null;
+            return new Vector3(hit.point.x, chestHeight, hit.point.z);// + new Vector3(0, 0.1f, 0);
+        }
+        else
+        {
+            Debug.LogWarning("nah mate");
+            return Vector3.zero;
         }
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log(other.gameObject.tag);
+    //    if (grabbable.GetIsGrabbed() && other.gameObject.tag == "Tape-able")
+    //    {
+    //        drawing = true;
+
+    //        RaycastHit hit;
+    //        Vector3 origin = transform.position + new Vector3(0, 3, 0);
+    //        if (Physics.Raycast(origin, Vector3.down, out hit, 10))
+    //        {
+    //            if (hit.transform.CompareTag(other.gameObject.tag))
+    //            {
+    //                drawStartEnd[0] = hit.point + new Vector3(0, 0.1f, 0);
+    //                drawStartEnd[1] = hit.point + new Vector3(0, 0.1f, 0);
+
+    //                if (line == null || !line.gameObject.activeInHierarchy)
+    //                {
+    //                    line = Instantiate(linePrefab, null).GetComponent<LineRenderer>();
+    //                }
+    //            }
+    //        }
+
+    //    }
+    //}
+
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (drawing && other.gameObject.tag == "Tape-able")
+    //    {
+    //        RaycastHit hit;
+    //        Vector3 origin = transform.position + new Vector3(0, 3, 0);
+    //        if (Physics.Raycast(origin, Vector3.down, out hit, 10))
+    //        {
+    //            if (hit.transform.CompareTag(other.gameObject.tag) && line)
+    //            {
+    //                drawStartEnd[1] = hit.point + new Vector3(0, 0.1f, 0);
+
+    //                line.SetPositions(drawStartEnd);
+    //            }
+    //        }
+    //    }
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if ((drawing && other.gameObject.tag == "Tape-able")
+    //        || !grabbable.GetIsGrabbed())
+    //    {
+    //        drawing = false;
+    //        line = null;
+    //    }
+    //}
 }
