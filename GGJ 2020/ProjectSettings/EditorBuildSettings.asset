@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 6bcc9456bcc6a5141b65f62b3362f6e4
   - enabled: 1
-    path: Assets/Scenes/ExampleGameScene.unity
-    guid: 1e6b8d39c2615c14b81d49e702a84d20
+    path: Assets/Scenes/Chappy.unity
+    guid: 0558f4d7b23a3924599aaf2ccd6cbe38
   m_configObjects: {}
