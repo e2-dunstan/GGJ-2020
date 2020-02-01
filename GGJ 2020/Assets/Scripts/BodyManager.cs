@@ -6,8 +6,10 @@ public class BodyManager : MonoBehaviour
 {
     public static BodyManager instance;
 
+    [System.Serializable]
     public class Body
     {
+        [System.Serializable]
         public class Part
         {
             public GameObject obj;
