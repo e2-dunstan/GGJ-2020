@@ -314,7 +314,6 @@ GameObject:
   m_Component:
   - component: {fileID: 726319047}
   - component: {fileID: 726319046}
-  - component: {fileID: 726319048}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -331,11 +330,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 726319045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25453cfacc2b58541b472285485fde87, type: 3}
+  m_Script: {fileID: 11500000, guid: 4eb9af2e756cc534e8b5260b13606adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bodyState: 0
-  wait: 0
+  flacidBody: {fileID: 4450326232498647241, guid: 063ff46b2d510c94db03ebd892e2dbda,
+    type: 3}
+  turgidBody: {fileID: 8478264767114361549, guid: c49c08d73836c384bb6088f8a47cf08d,
+    type: 3}
 --- !u!4 &726319047
 Transform:
   m_ObjectHideFlags: 0
@@ -350,31 +352,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &726319048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726319045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d72493185e5f84586c83ec6a1552d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodies:
-  - {fileID: 5418009626494058356, guid: c49c08d73836c384bb6088f8a47cf08d, type: 3}
-  - {fileID: 5418009626494058356, guid: c49c08d73836c384bb6088f8a47cf08d, type: 3}
-  - {fileID: 5418009626494058356, guid: c49c08d73836c384bb6088f8a47cf08d, type: 3}
-  BodyPrefab: {fileID: 8478264767114361549, guid: c49c08d73836c384bb6088f8a47cf08d,
-    type: 3}
-  bodyPosition: {x: 0, y: 0, z: 0}
-  animCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &809389389
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,6 +796,7 @@ GameObject:
   - component: {fileID: 1380914983}
   - component: {fileID: 1380914982}
   - component: {fileID: 1380914981}
+  - component: {fileID: 1380914984}
   m_Layer: 0
   m_Name: Plane001
   m_TagString: Untagged
@@ -888,6 +866,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0.90200007}
+--- !u!64 &1380914984
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380914980}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7450741763379908841, guid: 70ba4c7eb30fa08469d09ded3ffc392f, type: 3}
 --- !u!4 &1430621795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 176134147828372520, guid: 798cbef7e79988b4e901e0f7d7e8e090,
