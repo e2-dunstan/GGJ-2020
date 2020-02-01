@@ -29,7 +29,19 @@ public class bodyboi : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
+            switch(bodyState)
+            {
+                case BodyState.NEW:
+                    break;
+                case BodyState.CUTTING:
+                    FinishedCutting(); 
+                    break;
+                case BodyState.HOLEBOY:
+                    DoneWithThisOne(); 
+                    break;
+                case BodyState.DONE:
+                    break; 
+            }
         }
     }
 
@@ -50,8 +62,6 @@ public class bodyboi : MonoBehaviour
                     break;
 
                 case BodyState.HOLEBOY:
-                    flacidBoi.SetActive(false);
-                    turgidBoi = Instantiate(turgidBody);
                     break;
 
                 case BodyState.DONE:
@@ -61,7 +71,8 @@ public class bodyboi : MonoBehaviour
                         break;
                     }
                     flacidBoi.transform.GetChild(1).GetComponent<Rigidbody>().AddForce(new Vector3(25000, 0, 0));
-                    Destroy(flacidBoi, 2f);
+                    //Destroy(flacidBoi, 2f);
+                    flacidBoi = null; 
                     bodyState = BodyState.NEW;
                     break;
             }
@@ -72,7 +83,10 @@ public class bodyboi : MonoBehaviour
     public void FinishedCutting()
     {
         if (bodyState == BodyState.CUTTING)
-            bodyState = BodyState.HOLEBOY; 
+            bodyState = BodyState.HOLEBOY;
+        flacidBoi.SetActive(false);
+        if (!turgidBoi)
+            turgidBoi = Instantiate(turgidBody);
     }
     public void DoneWithThisOne()
     {
