@@ -64,9 +64,7 @@ public class HandMovement : MonoBehaviour
 
                 if (itemTouching)
                 {
-                    itemTouching.gameObject.GetComponent<Rigidbody>().useGravity = true;
-                    itemTouching.transform.parent = null;
-                    itemTouching = null;
+                    ResetGrabbedObject();
                 }
             }
         }
@@ -97,9 +95,7 @@ public class HandMovement : MonoBehaviour
         Vector3 depthMove = transform.position;
         depthMove.y = startingHeight - Input.GetAxis(LTriggerAxisString);
 
-        transform.position = depthMove;
-
-        
+        transform.position = depthMove;        
     }
 
     private void GetMovementInput()
@@ -125,8 +121,7 @@ public class HandMovement : MonoBehaviour
         {
             if (grabbing)
             {
-                grabbing = false;
-                itemTouching.transform.parent = null;
+                ResetGrabbedObject();
             }
 
             itemTouching = null;
@@ -175,6 +170,13 @@ public class HandMovement : MonoBehaviour
                 RTriggerAxisString = "TriggerR4";
                 break;
         }
+    }
+
+    private void ResetGrabbedObject()
+    {
+        itemTouching.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        itemTouching.transform.parent = null;
+        itemTouching = null;
     }
 
     public void ResetMovement()
