@@ -910,14 +910,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 309084438, guid: 822b98014c0b9ff44a0ffec8a0f908bf, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 14.058
-      objectReference: {fileID: 0}
-    - target: {fileID: 309084439, guid: 822b98014c0b9ff44a0ffec8a0f908bf, type: 3}
-      propertyPath: m_Text
-      value: Backalley Triage
-      objectReference: {fileID: 0}
     - target: {fileID: 995567663284144976, guid: 822b98014c0b9ff44a0ffec8a0f908bf,
         type: 3}
       propertyPath: m_LocalPosition.x
