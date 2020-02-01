@@ -154,7 +154,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.314, y: 2.749, z: -0.114}
+  m_ConnectedAnchor: {x: 0.153, y: 2.419, z: -0.114}
   serializedVersion: 2
   m_Spring: 20
   m_Damper: 0.2
@@ -201,12 +201,12 @@ PrefabInstance:
     - target: {fileID: 8374562080988299790, guid: 54645ba383294ef4e94c9654989a7fc4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.314
+      value: 0.153
       objectReference: {fileID: 0}
     - target: {fileID: 8374562080988299790, guid: 54645ba383294ef4e94c9654989a7fc4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.749
+      value: 2.419
       objectReference: {fileID: 0}
     - target: {fileID: 8374562080988299790, guid: 54645ba383294ef4e94c9654989a7fc4,
         type: 3}
@@ -273,6 +273,12 @@ PrefabInstance:
 --- !u!1 &2051925887488625074 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5321082381273125520, guid: 54645ba383294ef4e94c9654989a7fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6170405941002885922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2421182146114509100 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8374562080988299790, guid: 54645ba383294ef4e94c9654989a7fc4,
     type: 3}
   m_PrefabInstance: {fileID: 6170405941002885922}
   m_PrefabAsset: {fileID: 0}

@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Can Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1516621048930313683, guid: 3dc2933d87ea97f43a378f42fe7a7603,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grabbable
+      objectReference: {fileID: 0}
     - target: {fileID: 2546582282434107328, guid: 3dc2933d87ea97f43a378f42fe7a7603,
         type: 3}
       propertyPath: m_LocalPosition.x
