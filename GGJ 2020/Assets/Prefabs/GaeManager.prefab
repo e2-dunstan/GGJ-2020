@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 513234199168237154}
   - component: {fileID: 513234199168237157}
   - component: {fileID: 3261170411220968182}
+  - component: {fileID: 2338479152601931055}
   m_Layer: 0
   m_Name: GaeManager
   m_TagString: Untagged
@@ -58,6 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d72493185e5f84586c83ec6a1552d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodies: []
   BodyPrefab: {fileID: 0}
   bodyPosition: {x: 0, y: 0, z: 0}
   animCurve:
@@ -66,3 +68,16 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2338479152601931055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513234199168237156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc053f610966a2c48915c16cd06cd70b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneShots: []

@@ -16,19 +16,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &8163966770551102581
-SphereCollider:
+--- !u!145 &1304997651637684081
+SpringJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4271577229284360563}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: 1, z: 0}
   serializedVersion: 2
-  m_Radius: 0.005
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Spring: 20
+  m_Damper: 0.2
+  m_MinDistance: 0
+  m_MaxDistance: 0
+  m_Tolerance: 0.025
+  m_BreakForce: 50
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!120 &8907934022171423910
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -143,29 +153,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!145 &1304997651637684081
-SpringJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4271577229284360563}
-  m_ConnectedBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 1, z: 0}
-  serializedVersion: 2
-  m_Spring: 20
-  m_Damper: 0.2
-  m_MinDistance: 0
-  m_MaxDistance: 0
-  m_Tolerance: 0.025
-  m_BreakForce: 50
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!114 &3728240353004297676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +166,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTool: 0
+--- !u!64 &1967621534362310680
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4271577229284360563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2049782666802440219, guid: a331cea6bc86b2c42a7df4c961443b4c, type: 3}
 --- !u!1001 &7286954911821733348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,7 +190,7 @@ PrefabInstance:
     - target: {fileID: 6802623713826593943, guid: 33eb30ff47839714eb7a5d66ac223d68,
         type: 3}
       propertyPath: m_Name
-      value: liver
+      value: liver Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7511054068284829316, guid: 33eb30ff47839714eb7a5d66ac223d68,
         type: 3}

@@ -14,7 +14,7 @@ public class GaeManager : MonoBehaviour
 
     [HideInInspector] public bool wait = false;
 
-    public BodyManager.Body currentBody { get; set; }
+    public Body currentBody { get; set; }
 
 
     private void Awake()
@@ -61,10 +61,11 @@ public class GaeManager : MonoBehaviour
 
     private bool DissectionComplete()
     {
-        for(int i = 0; i < currentBody.partsToRemove.Length; i++)
-        {
-            if (!currentBody.partsToRemove[i].removed) return false;
-        }
+        if (currentBody.complete) return true;
+        //for(int i = 0; i < currentBody.partsToRemove.Count; i++)
+        //{
+        //    if (!currentBody.partsToRemove[i].removed) return false;
+        //}
         return true;
     }
 
@@ -78,7 +79,7 @@ public class GaeManager : MonoBehaviour
 
     }
 
-    public BodyManager.Body GetCurrentBody()
+    public Body GetCurrentBody()
     {
         return currentBody;
     }

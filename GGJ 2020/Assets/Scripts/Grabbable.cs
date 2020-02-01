@@ -11,6 +11,8 @@ public class Grabbable : MonoBehaviour
 
     private bool isGrabbed = false;
 
+    public bool isForeign = false;
+
     public bool attached {private set; get;}
 
     // Start is called before the first frame update

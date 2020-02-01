@@ -6,18 +6,6 @@ public class BodyManager : MonoBehaviour
 {
     public static BodyManager instance;
 
-    [System.Serializable]
-    public class Body
-    {
-        [System.Serializable]
-        public class Part
-        {
-            public GameObject obj;
-            [HideInInspector] public bool removed = false;
-        }
-        public Part[] partsToRemove;
-        [HideInInspector] public bool complete = false;
-    }
     public Body[] bodies;
 
     public GameObject BodyPrefab;
