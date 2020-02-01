@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class SpawnOrgans : MonoBehaviour
 {
-    public Vector3 minPos;
-    public Vector3 maxPos;
+    private Vector3 minPos = new Vector3(-0.01f, -0.63f, -0.07f);
+    private Vector3 maxPos = new Vector3(0.08f, 0.11f, -0.035f);
 
     public GameObject[] organs;
     public GameObject[] foreigns;
 
     private int numOrgans = 10;
 
-    private Body body;
-
-    void Start()
+    public void FillBody()
     {
-        body = GetComponentInParent<Body>();
         StartCoroutine(Spawn());
     }
 
@@ -28,7 +25,7 @@ public class SpawnOrgans : MonoBehaviour
         for (int i = 0; i < numOrgans; i++)
         {
             GameObject organ = Instantiate(organs[Random.Range(0, organs.Length - 1)], transform);
-            organ.transform.position = RandomPosition();
+            organ.transform.localPosition = RandomPosition();
 
             if (Random.Range(0, 100) < chanceToForeign)
             {
@@ -42,7 +39,6 @@ public class SpawnOrgans : MonoBehaviour
             AddForeign();
         }
 
-        body.initialised = true;
     }
 
     private Vector3 RandomPosition()
@@ -57,9 +53,7 @@ public class SpawnOrgans : MonoBehaviour
     private void AddForeign()
     {
         GameObject foreign = Instantiate(foreigns[Random.Range(0, foreigns.Length - 1)], transform);
-        foreign.transform.position = RandomPosition();
-        Body.Part newPart = new Body.Part();
-        newPart.obj = foreign.GetComponent<Grabbable>();
-        body.partsToRemove.Add(newPart);
+        foreign.transform.localPosition = RandomPosition();
+        foreign.tag = "Foreign";
     }
 }

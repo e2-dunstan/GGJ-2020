@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTool: 1
+  isForeign: 0
 --- !u!1001 &27808385763307321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,7 +191,7 @@ PrefabInstance:
     - target: {fileID: 1516621048930313683, guid: 3dc2933d87ea97f43a378f42fe7a7603,
         type: 3}
       propertyPath: m_Name
-      value: Can
+      value: Can Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2546582282434107328, guid: 3dc2933d87ea97f43a378f42fe7a7603,
         type: 3}
@@ -250,17 +251,17 @@ PrefabInstance:
     - target: {fileID: 2546582282434107328, guid: 3dc2933d87ea97f43a378f42fe7a7603,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 6.560966
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2546582282434107328, guid: 3dc2933d87ea97f43a378f42fe7a7603,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 6.560966
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2546582282434107328, guid: 3dc2933d87ea97f43a378f42fe7a7603,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 6.560966
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc2933d87ea97f43a378f42fe7a7603, type: 3}
