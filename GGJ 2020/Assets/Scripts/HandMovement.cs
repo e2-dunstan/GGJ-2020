@@ -28,7 +28,7 @@ public class HandMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rbody = GetComponent<Rigidbody>();
+        rbody = GetComponent<Rigidbody>();        
         startingHeight = transform.position.y;
 
         AssignStrings();
@@ -52,6 +52,7 @@ public class HandMovement : MonoBehaviour
                 {
                     grabbing = true;
                     itemTouching.transform.parent = gameObject.transform;
+                    itemTouching.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 }
             }
         }
@@ -63,6 +64,7 @@ public class HandMovement : MonoBehaviour
 
                 if (itemTouching)
                 {
+                    itemTouching.gameObject.GetComponent<Rigidbody>().useGravity = true;
                     itemTouching.transform.parent = null;
                     itemTouching = null;
                 }
@@ -110,7 +112,7 @@ public class HandMovement : MonoBehaviour
     {
         if (!grabbing)
         {
-            if (other.tag == "Grabbable")
+            if (other.GetComponent<Grabbable>())
             {
                 itemTouching = other.transform;
             }
