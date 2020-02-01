@@ -37,12 +37,20 @@ public class ChestCutManager : MonoBehaviour
         
     }
 
-    public void Cut(Vector3 _pos)
+    public void Cut(Vector3 _pos, GameObject _cut)
     {
         GameObject blood = Instantiate(bloodParticle, _pos, Quaternion.identity);
         blood.transform.Rotate(-90, 0, 0);
         StartCoroutine("BloodFade", blood.GetComponent<ParticleSystem>());
-        //Destroy(blood, 3);
+
+        UIManager.instance.NewBloodSplatter();
+
+        cutPoints.Remove(_cut);
+
+        if (cutPoints.Count < 1)
+        {
+            bodyboi.instance.FinishedCutting();
+        }
     }
 
     IEnumerator BloodFade(ParticleSystem _blood)
