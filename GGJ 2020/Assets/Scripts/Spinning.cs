@@ -14,6 +14,6 @@ public class Spinning : MonoBehaviour
 
     void Update()
     {
-        this.gameObject.transform.Rotate(appliedRotation);
+        this.gameObject.transform.Rotate(appliedRotation*2.5f);
     }
 }
