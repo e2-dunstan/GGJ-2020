@@ -7,6 +7,8 @@ public class HandMovement : MonoBehaviour
 {
     [SerializeField] int ID = 0;
 
+    private Rigidbody rbody;
+
     private float startingHeight = 0.0f;
     private float horizontalMove = 0.0f;
     private float verticalMove = 0.0f;
@@ -26,6 +28,7 @@ public class HandMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rbody = GetComponent<Rigidbody>();
         startingHeight = transform.position.y;
 
         AssignStrings();
@@ -128,6 +131,19 @@ public class HandMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<HandMovement>())
+        {
+            ResetMovement();
+            float magnitude = 50;
+            Vector3 force = transform.position - collision.transform.position;
+            force.Normalize();
+            rbody.AddForce(force * magnitude);
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(-force * magnitude);
+        }
+    }
+
     private void AssignStrings()
     {
         switch (ID)
@@ -157,5 +173,12 @@ public class HandMovement : MonoBehaviour
                 RTriggerAxisString = "TriggerR4";
                 break;
         }
+    }
+
+    public void ResetMovement()
+    {
+        horizontalMove = 0.0f;
+        verticalMove = 0.0f;
+        acceleration = 1.0f;
     }
 }
