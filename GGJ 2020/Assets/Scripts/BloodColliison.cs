@@ -29,10 +29,13 @@ public class BloodColliison : MonoBehaviour
 
         if (other.tag != "Blood" && other.tag != "BloodParticle")
         {
-            GameObject obj = Instantiate(bloodPrefab, collisionEvents[0].intersection, Quaternion.identity);
-            int y = Random.Range(-360, 360);
-            rot.y = y;
-            obj.transform.Rotate(rot);
+            if (!other.gameObject.GetComponent<Grabbable>())
+            {
+                GameObject obj = Instantiate(bloodPrefab, collisionEvents[0].intersection, Quaternion.identity);
+                int y = Random.Range(-360, 360);
+                rot.y = y;
+                obj.transform.Rotate(rot);
+            }
         }
         else
         {

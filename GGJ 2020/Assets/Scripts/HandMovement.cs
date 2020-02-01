@@ -8,6 +8,7 @@ public class HandMovement : MonoBehaviour
     [SerializeField] int ID = 0;
 
     private Rigidbody rbody;
+    private Animator anim;
 
     private float startingHeight = 0.0f;
     private float horizontalMove = 0.0f;
@@ -28,6 +29,7 @@ public class HandMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         rbody = GetComponent<Rigidbody>();        
         startingHeight = transform.position.y;
 
@@ -44,6 +46,15 @@ public class HandMovement : MonoBehaviour
 
     private void GrabInput()
     {
+        if (Input.GetAxis(RTriggerAxisString) > 0)
+            anim.SetBool("Grab", true);
+
+        if (anim.GetBool("Grab"))
+        {
+            if (Input.GetAxis(RTriggerAxisString) == 0)
+                anim.SetBool("Grab", false);
+        }
+
         if (!grabbing)
         {
             if (Input.GetAxis(RTriggerAxisString) > 0)
@@ -53,7 +64,7 @@ public class HandMovement : MonoBehaviour
                     grabbing = true;
                     itemTouching.transform.parent = gameObject.transform;
                     itemTouching.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                    itemTouching.gameObject.GetComponent<Grabbable>().SetIsGrabbed(true);
+                    itemTouching.gameObject.GetComponent<Grabbable>().SetIsGrabbed(true);                    
                 }
             }
         }
@@ -61,7 +72,7 @@ public class HandMovement : MonoBehaviour
         {
             if (Input.GetAxis(RTriggerAxisString) == 0)
             {
-                grabbing = false;
+                grabbing = false;                
 
                 if (itemTouching)
                 {
@@ -89,14 +100,14 @@ public class HandMovement : MonoBehaviour
         }
 
         Vector3 move = new Vector3(0, 0, 0);
-        move.x = horizontalMove;
-        move.z = verticalMove;        
+        move.x = horizontalMove * -10000000;
+        move.z = verticalMove;
         transform.Translate(move * (movementSpeed * acceleration) * Time.deltaTime);
 
         Vector3 depthMove = transform.position;
         depthMove.y = startingHeight - Input.GetAxis(LTriggerAxisString);
 
-        transform.position = depthMove;        
+        transform.position = depthMove;
     }
 
     private void GetMovementInput()
