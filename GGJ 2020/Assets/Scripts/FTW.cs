@@ -10,6 +10,14 @@ public class FTW : MonoBehaviour
     private float floatAlphaIncrease = 1f;
     private Color ftwAlphaIncrease;
 
+    private void Awake()
+    {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Game"))
+        {
+            Camera.main.GetComponent<Animation>().Play();
+        }
+    }
+
     public IEnumerator NextScene()
     {
         Color startColour = new Color(ftw.color.r, ftw.color.g, ftw.color.b, 0);
