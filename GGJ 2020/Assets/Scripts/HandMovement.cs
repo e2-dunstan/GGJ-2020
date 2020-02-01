@@ -53,6 +53,7 @@ public class HandMovement : MonoBehaviour
                     grabbing = true;
                     itemTouching.transform.parent = gameObject.transform;
                     itemTouching.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    itemTouching.gameObject.GetComponent<Grabbable>().SetIsGrabbed(true);
                 }
             }
         }
@@ -174,6 +175,7 @@ public class HandMovement : MonoBehaviour
 
     private void ResetGrabbedObject()
     {
+        itemTouching.gameObject.GetComponent<Grabbable>().SetIsGrabbed(false);
         itemTouching.gameObject.GetComponent<Rigidbody>().useGravity = true;
         itemTouching.transform.parent = null;
         itemTouching = null;

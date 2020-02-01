@@ -9,6 +9,8 @@ public class Grabbable : MonoBehaviour
     private LineRenderer lRenderer;
     private SpringJoint spring;
 
+    private bool isGrabbed = false;
+
     public bool attached {private set; get;}
 
     // Start is called before the first frame update
@@ -68,5 +70,15 @@ public class Grabbable : MonoBehaviour
             attached = false;
             lRenderer.enabled = false;
         }        
+    }
+
+    public bool GetIsGrabbed()
+    {
+        return isGrabbed;
+    }
+
+    public void SetIsGrabbed(bool _grab)
+    {
+        isGrabbed = _grab;
     }
 }
