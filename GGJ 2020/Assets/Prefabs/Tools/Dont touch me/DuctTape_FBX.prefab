@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f294dd19d39b0af4c914f57357802a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTool: 1
 --- !u!120 &4311789812594921375
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -251,3 +252,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linePrefab: {fileID: 6467331001594087770, guid: 045fc0df3d6cb5b40a543af9adcc38c3,
     type: 3}
+  tapeableLayer:
+    serializedVersion: 2
+    m_Bits: 256
