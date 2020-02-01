@@ -7,7 +7,8 @@ public class BloodSetUp : MonoBehaviour
     [SerializeField]private SpriteRenderer sprite;
     private float size = 0.1f;
     private float blobsHit = 0;
-    private Vector3 startSize = new Vector3(0.1f, 0.1f, 1);
+    private Vector3 startSize = new Vector3(0.01f, 0.01f, 1);
+    [SerializeField] private GameObject bloodObject;
 
     private void Awake()
     {
@@ -24,15 +25,15 @@ public class BloodSetUp : MonoBehaviour
         }
         else
         {
-            size = 0.1f * blobsHit;
+            size = 0.01f * blobsHit;
             Vector3 scale = new Vector3(size, size, 1);
-            this.gameObject.transform.localScale = scale;
+            bloodObject.transform.localScale = scale;
         }
     }
 
     private IEnumerator LivingFade()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(2f);
 
         Color startColour = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
         Color endColour = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
