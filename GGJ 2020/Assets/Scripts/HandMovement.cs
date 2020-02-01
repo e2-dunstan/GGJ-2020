@@ -136,11 +136,11 @@ public class HandMovement : MonoBehaviour
         if (collision.gameObject.GetComponent<HandMovement>())
         {
             ResetMovement();
-            float magnitude = 50;
+            float magnitude = 5f;
             Vector3 force = transform.position - collision.transform.position;
             force.Normalize();
-            rbody.AddForce(force * magnitude);
-            collision.gameObject.GetComponent<Rigidbody>().AddForce(-force * magnitude);
+            rbody.AddForce(force * magnitude, ForceMode.Impulse);
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(-force * magnitude, ForceMode.Impulse);
         }
     }
 
