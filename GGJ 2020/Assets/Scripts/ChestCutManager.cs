@@ -27,6 +27,7 @@ public class ChestCutManager : MonoBehaviour
 
             GameObject point = Instantiate(cutPointPrefab, newPos, Quaternion.identity);
             point.GetComponent<ChestCutPoint>().SetManager(this);
+            point.transform.parent = transform;
         }
     }
 
