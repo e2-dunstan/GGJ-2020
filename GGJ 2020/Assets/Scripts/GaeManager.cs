@@ -25,7 +25,6 @@ public class GaeManager : MonoBehaviour
     void Update()
     {
         if (wait) return;
-
         switch (bodyState)
         {
             case BodyState.NEW:

@@ -159,7 +159,8 @@ MonoBehaviour:
   organs:
   - {fileID: 9210616476732317656, guid: 0dd0a0f27f3262e4ab8abc9573fb7589, type: 3}
   - {fileID: 4271577229284360563, guid: 2aa46c6bc9af5a44489849a55a6591d7, type: 3}
-  foreigns: []
+  foreigns:
+  - {fileID: 4271577229284360563, guid: 2aa46c6bc9af5a44489849a55a6591d7, type: 3}
 --- !u!1 &8478264767114361549
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,8 +185,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8478264767114361549}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -3.1, y: -4.14, z: -3.12}
+  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4064723628813441750}
@@ -193,7 +194,7 @@ Transform:
   - {fileID: 1252261563409887584}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: -90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
 --- !u!114 &5418009626494058356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +209,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partsToRemove: []
   complete: 0
+  initialised: 0

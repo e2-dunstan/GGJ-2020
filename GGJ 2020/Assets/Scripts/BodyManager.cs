@@ -22,7 +22,7 @@ public class BodyManager : MonoBehaviour
 
     public void BringIn()
     {
-        GaeManager.instance.currentBody.complete = true;
+        if (GaeManager.instance.currentBody != null) { GaeManager.instance.currentBody.complete = true; }
         GaeManager.instance.currentBody = GetNew();
         if (GaeManager.instance.currentBody == null)
         {
