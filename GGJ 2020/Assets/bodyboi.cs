@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class bodyboi : MonoBehaviour
 {
+    public static bodyboi instance;
+
     public enum BodyState
     {
         NEW = 0, CUTTING = 1, HOLEBOY = 2, DONE = 3
@@ -19,6 +21,7 @@ public class bodyboi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!instance) instance = this;
         StartCoroutine("GameLoop"); 
     }
 
@@ -26,33 +29,53 @@ public class bodyboi : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            bodyState = BodyState.HOLEBOY; 
+            
         }
     }
 
     // Update is called once per frame
     private IEnumerator GameLoop()
     {
-        //while (true)
+        while (true)
         switch (bodyState)
         {
             case BodyState.NEW:
-                flacidBoi = Instantiate(flacidBody);
-                yield return null; 
+                    flacidBoi = Instantiate(flacidBody);
+                    bodyState = BodyState.CUTTING; 
                 break;
 
             case BodyState.CUTTING:
-
                 break;
 
             case BodyState.HOLEBOY:
-                Destroy(flacidBody); 
-                turgidBoi = Instantiate(turgidBody); 
+                    flacidBoi.SetActive(false);
+                    turgidBoi = Instantiate(turgidBody); 
                 break;
 
             case BodyState.DONE:
-
-                break;
+                    if (flacidBoi == null)
+                    {
+                        bodyState = BodyState.NEW;
+                        break; 
+                    }
+                    flacidBoi.transform.GetChild(1).GetComponent<Rigidbody>().AddForce(new Vector3(25000, 0, 0));
+                    Destroy(flacidBoi, 2f);
+                    bodyState = BodyState.NEW;
+                    break;
         }
+    }
+
+    public void FinishedCutting()
+    {
+        if (bodyState == BodyState.CUTTING)
+            bodyState = BodyState.HOLEBOY; 
+    }
+    public void DoneWithThisOne()
+    {
+        if (turgidBoi)
+            Destroy(turgidBoi);
+        if (flacidBoi)
+            flacidBoi.SetActive(true); 
+        bodyState = BodyState.DONE; 
     }
 }
