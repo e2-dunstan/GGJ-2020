@@ -8,6 +8,7 @@ TagManager:
   - Tape-able
   - Blood
   - BloodParticle
+  - Sharp
   layers:
   - Default
   - TransparentFX

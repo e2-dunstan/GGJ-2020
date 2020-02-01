@@ -19,7 +19,7 @@ public class ChestCutPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Grabbable>())
+        if (other.gameObject.tag == "Sharp")
         {
             cutManager.Cut(transform.position);
         }

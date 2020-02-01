@@ -27,7 +27,7 @@ public class BloodColliison : MonoBehaviour
     {
         int numCollisionEvents = particleSystem.GetCollisionEvents(other, collisionEvents);
 
-        if (other.tag != "Blood" && other.tag != "BloodParticle")
+        if (other.tag != "Blood" && other.tag != "BloodParticle" && other.tag != "Sharp")
         {
             if (!other.gameObject.GetComponent<Grabbable>())
             {
