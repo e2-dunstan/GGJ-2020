@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioClip[] oneShots;
 
-    void Start()
+    public void PlayOneShot(AudioSource source)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        int rand = Random.Range(0, oneShots.Length - 1);
+        source.PlayOneShot(oneShots[rand]);
     }
 }
