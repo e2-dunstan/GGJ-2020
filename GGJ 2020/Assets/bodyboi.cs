@@ -36,32 +36,36 @@ public class bodyboi : MonoBehaviour
     // Update is called once per frame
     private IEnumerator GameLoop()
     {
+        yield return new WaitForSeconds(4); 
         while (true)
-        switch (bodyState)
         {
-            case BodyState.NEW:
+            switch (bodyState)
+            {
+                case BodyState.NEW:
                     flacidBoi = Instantiate(flacidBody);
-                    bodyState = BodyState.CUTTING; 
-                break;
+                    bodyState = BodyState.CUTTING;
+                    break;
 
-            case BodyState.CUTTING:
-                break;
+                case BodyState.CUTTING:
+                    break;
 
-            case BodyState.HOLEBOY:
+                case BodyState.HOLEBOY:
                     flacidBoi.SetActive(false);
-                    turgidBoi = Instantiate(turgidBody); 
-                break;
+                    turgidBoi = Instantiate(turgidBody);
+                    break;
 
-            case BodyState.DONE:
+                case BodyState.DONE:
                     if (flacidBoi == null)
                     {
                         bodyState = BodyState.NEW;
-                        break; 
+                        break;
                     }
                     flacidBoi.transform.GetChild(1).GetComponent<Rigidbody>().AddForce(new Vector3(25000, 0, 0));
                     Destroy(flacidBoi, 2f);
                     bodyState = BodyState.NEW;
                     break;
+            }
+            yield return null; 
         }
     }
 
