@@ -9,7 +9,7 @@ public class Tool : MonoBehaviour
 
     private void Start()
     {
-        spawn = tool.transform.position;
+        spawn = transform.GetChild(0).position;
     }
 
     private void Update()
