@@ -194,8 +194,8 @@ SpringJoint:
   m_MinDistance: 0
   m_MaxDistance: 0
   m_Tolerance: 0.025
-  m_BreakForce: 20
-  m_BreakTorque: 30
+  m_BreakForce: 10
+  m_BreakTorque: 10
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
@@ -211,5 +211,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
-  m_Center: {x: 0, y: 0, z: 3.35}
+  m_Radius: 0.05
+  m_Center: {x: 0, y: 0, z: 0}

@@ -146,7 +146,7 @@ public class HandMovement : MonoBehaviour
         {
             ResetMovement();
             ResetGrabbedObject();
-            float magnitude = 5f;
+            float magnitude = 2f;
             Vector3 force = transform.position - collision.transform.position;
             force.Normalize();
             rbody.AddForce(force * magnitude, ForceMode.Impulse);
@@ -187,10 +187,13 @@ public class HandMovement : MonoBehaviour
 
     private void ResetGrabbedObject()
     {
-        itemTouching.gameObject.GetComponent<Grabbable>().SetIsGrabbed(false);
-        itemTouching.gameObject.GetComponent<Rigidbody>().useGravity = true;
-        itemTouching.transform.parent = null;
-        itemTouching = null;
+        if (itemTouching)
+        {
+            itemTouching.gameObject.GetComponent<Grabbable>().SetIsGrabbed(false);
+            itemTouching.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            itemTouching.transform.parent = null;
+            itemTouching = null;
+        }
     }
 
     public void ResetMovement()
