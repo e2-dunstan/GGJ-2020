@@ -94,7 +94,7 @@ public class AudioManager : MonoBehaviour
         if (good)
         {
             int i = Random.Range(0, cheers.Length - 1);
-            StartCoroutine(playSound(cheers[i]));
+            StartCoroutine(playSound(cheers[i], 2));
         }
     }
     public void SplatFX()
@@ -112,10 +112,11 @@ public class AudioManager : MonoBehaviour
         int i = Random.Range(0, slaps.Length - 1);
         StartCoroutine(playSound(slaps[i]));
     }
-    private IEnumerator playSound(AudioClip clip)
+    private IEnumerator playSound(AudioClip clip, float volume = 1)
     {
         AudioSource audio = gameObject.AddComponent<AudioSource>();
         audio.clip = clip;
+        audio.volume = volume; 
         audio.Play();
         yield return new WaitForSeconds(clip.length);
     }
