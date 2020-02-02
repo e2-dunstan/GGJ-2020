@@ -11,6 +11,7 @@ public class GameManager : MonoSingleton<GameManager>
     private int p3Score = 0;
     private int p4Score = 0;
     private GameObject currentBody;
+    [SerializeField] private GameObject ftw;
 
 
     public bool currentDudeAlive = false;
@@ -69,5 +70,10 @@ public class GameManager : MonoSingleton<GameManager>
                 }
         }
         return false;
+    }
+
+    public void NextScene()
+    {
+        ftw.GetComponent<FTW>().NextScene();
     }
 }

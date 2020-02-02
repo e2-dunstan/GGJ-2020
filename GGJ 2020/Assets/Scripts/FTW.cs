@@ -9,6 +9,7 @@ public class FTW : MonoBehaviour
     private Color alphaIncrease = new Color(0, 0, 0, 0.002f);
     private float floatAlphaIncrease = 1f;
     private Color ftwAlphaIncrease;
+    private GameObject secondCamera;
 
     private void Awake()
     {
@@ -30,7 +31,22 @@ public class FTW : MonoBehaviour
             yield return null;
         }
         ftw.color = endColour;
-        SceneManager.LoadScene(2);
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Game"))
+        {
+            Camera.main.gameObject.SetActive(false);
+            secondCamera.GetComponent<AudioListener>().enabled = true;
+            secondCamera.GetComponent<Camera>().enabled = true;
+        }
+        else
+        {
+            SceneManager.LoadScene(2);
+        }
         yield return null;
+    }
+
+    public void SetSecondCamera(GameObject _cam)
+    {
+        secondCamera = _cam;
     }
 }

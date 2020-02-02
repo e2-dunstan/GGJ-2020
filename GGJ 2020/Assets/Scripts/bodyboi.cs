@@ -94,10 +94,15 @@ public class bodyboi : MonoBehaviour
     }
     public void DoneWithThisOne()
     {
+        if (GameManager.Instance.GetBodyState() == true)
+        {
+            GameManager.Instance.GiveScore();
+        }
         if (turgidBoi)
             Destroy(turgidBoi);
         if (flacidBoi)
             flacidBoi.SetActive(true); 
+
         bodyState = BodyState.DONE; 
     }
 }

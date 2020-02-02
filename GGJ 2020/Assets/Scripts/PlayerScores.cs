@@ -39,6 +39,7 @@ public class PlayerScores : MonoBehaviour
                 minutes--;
                 if (minutes < 0)
                 {
+                    GameManager.Instance.NextScene();
                     break;
                 }
                 else
