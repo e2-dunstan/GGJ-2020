@@ -89,7 +89,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8950265562796933603, guid: fa14d59c846ffa7419850cb0b7cf9088, type: 3}
+  - {fileID: 2100000, guid: 1fdde2a4799bd744aa0e94d13aa1e4c0, type: 2}
   - {fileID: 8486936951020155453, guid: fa14d59c846ffa7419850cb0b7cf9088, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -234,11 +234,15 @@ MonoBehaviour:
   minPos: {fileID: 9082566647460308131}
   maxPos: {fileID: 736088085274824586}
   organs:
-  - {fileID: 3727428688492299947, guid: 56e4f67f12997ce438c226d3e7f83b9d, type: 3}
-  - {fileID: 805683553773400039, guid: 1465b5ee9c15f234ebf99075e733f223, type: 3}
   - {fileID: 8558329740928417366, guid: 66acb435227fcdc438681737ab1a2346, type: 3}
+  - {fileID: 805683553773400039, guid: 1465b5ee9c15f234ebf99075e733f223, type: 3}
+  - {fileID: 3727428688492299947, guid: 56e4f67f12997ce438c226d3e7f83b9d, type: 3}
+  - {fileID: 3727428688492299947, guid: 56e4f67f12997ce438c226d3e7f83b9d, type: 3}
   foreigns:
   - {fileID: 1544406310587321066, guid: 8487ad5d3c27e4740a565dcd2d39fb32, type: 3}
+  - {fileID: 5211618210307244319, guid: e4559373d07ca304fbc03a69141b8f00, type: 3}
+  - {fileID: 3496057778243674790, guid: 0cd6d22de8578cc4789ff2018a7cf138, type: 3}
+  - {fileID: 5211618210307244319, guid: e4559373d07ca304fbc03a69141b8f00, type: 3}
 --- !u!1 &8478264767114361549
 GameObject:
   m_ObjectHideFlags: 0
