@@ -5,6 +5,7 @@ using UnityEngine;
 //[RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
+    public AudioClip[] music; 
     public AudioClip[] oneShots;
     public AudioClip[] screams;
     public AudioClip[] ouch; 
@@ -16,10 +17,11 @@ public class AudioManager : MonoBehaviour
 
     private float quipTimerDelay = 10.0f;
     private float quipTimer = 0.0f;
-
+    private int musicnum = 0; 
     public void Start()
     {
         if (!instance) instance = this;
+        StartCoroutine(PlayMusic()); 
     }
 
     private void Update()
@@ -28,13 +30,46 @@ public class AudioManager : MonoBehaviour
 
         if (quipTimer > quipTimerDelay)
         {
-            quipTimer = 0.0f;
-
-            PlayQuip();
-
             quipTimerDelay = Random.Range(10, 20);
+            PlayQuip();
+            quipTimer = 0.0f;
         }
     }
+    public void nextMusic()
+    {
+        if (musicnum == 0)
+            musicnum++;
+        else
+            musicnum = 0; 
+    }
+    public IEnumerator PlayMusic()
+    {
+        AudioSource audio = gameObject.AddComponent<AudioSource>();
+        audio.clip = music[musicnum];
+        audio.loop = true;
+        audio.Play();
+        while (musicnum == 0)
+            yield return null;
+        while (audio.volume > 0.25f)
+        {
+            yield return null; 
+            audio.volume -= 0.01f;
+        }
+        audio.volume = 0.25f; 
+        audio.Stop();
+        audio.clip = music[musicnum];
+        audio.loop = true;
+        audio.Play();
+        while (audio.volume < 1)
+        {
+            audio.volume += 0.01f;
+            yield return null;
+        }
+        audio.volume = 1;
+        while (true)
+        yield return null;
+    }
+
     public void PlaySpecificOneShot(string soundName)
     {
         for (int i = 0; i < oneShots.Length; ++i)

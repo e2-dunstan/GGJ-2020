@@ -48,6 +48,7 @@ public class PlayButtonFade : MonoBehaviour
             yield return null;
         }
         ftw.color = endColour;
+        AudioManager.instance.nextMusic(); 
         SceneManager.LoadScene(1);
         yield return null;
     }
