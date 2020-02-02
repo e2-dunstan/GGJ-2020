@@ -41,7 +41,7 @@ public class SpawnOrgans : MonoBehaviour
         {
             AddForeign();
         }
-
+        GetComponentInParent<Body>().SetPartsInside(numOrgans, currentForeign);
     }
 
     private Vector3 RandomPosition()

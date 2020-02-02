@@ -40,4 +40,9 @@ public class Grabbable : MonoBehaviour
     {
         isGrabbed = _grab;
     }
+
+    public bool GetisTool()
+    {
+        return isTool;
+    }
 }
