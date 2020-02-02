@@ -48,7 +48,7 @@ public class BloodColliison : MonoBehaviour
         while (_blood)
         {
             ParticleSystem.MinMaxCurve r = em.rateOverTime;
-            r.constantMax *= 0.9f;
+            r.constantMax *= 0.95f;
             em.rateOverTime = r;
 
             if (em.rateOverTime.constantMax < 10)

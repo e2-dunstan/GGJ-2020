@@ -39,6 +39,7 @@ public class SharpObject : MonoBehaviour
             {
                 spawned = true;
                 GameObject blood = Instantiate(bloodPrefab, bladePoint.position, Quaternion.identity);
+                blood.transform.parent = other.gameObject.transform;
                 UIManager.instance.NewBloodSplatter();
             }
         }
