@@ -91,11 +91,8 @@ public class AudioManager : MonoBehaviour
     }
     public void FinishedWithBodySound(bool good = true)
     {
-        if (good)
-        {
-            int i = Random.Range(0, cheers.Length - 1);
-            StartCoroutine(playSound(cheers[i]));
-        }
+        int i = Random.Range(0, cheers.Length - 1);
+        StartCoroutine(playSound(cheers[i]));
     }
     public void SplatFX()
     {
