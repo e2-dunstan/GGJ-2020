@@ -35,7 +35,7 @@ public class SharpObject : MonoBehaviour
     {
         if (!spawned)
         {
-            if (other.tag != "Surface" && other.gameObject != gameObject)
+            if (other.tag != "Surface" && other.tag != "Sharp" && other.gameObject != gameObject)
             {
                 spawned = true;
                 GameObject blood = Instantiate(bloodPrefab, bladePoint.position, Quaternion.identity);
