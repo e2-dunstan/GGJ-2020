@@ -82,7 +82,6 @@ public class Body : MonoBehaviour
         if (collider.gameObject.tag == "Foreign")
         {
             foreignsOutside++;
-            //collider.gameObject.GetComponent<HandMovement>().get     Add score to player
         }
     }
 

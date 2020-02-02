@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 5556746522866246724, guid: 26ab37f6273c0b74bb57f6f6101801a8,
         type: 3}
       propertyPath: m_TagString
-      value: Surface
+      value: Foreign
       objectReference: {fileID: 0}
     - target: {fileID: 6134273817377656984, guid: 26ab37f6273c0b74bb57f6f6101801a8,
         type: 3}

@@ -38,7 +38,7 @@ public class PlayerScores : MonoBehaviour
         while (true)
         {
             seconds--;
-            if (seconds < 0)
+            if (seconds < 1)
             {
                 minutes--;
                 if (minutes < 0)
