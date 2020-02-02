@@ -61,7 +61,10 @@ public class bodyboi : MonoBehaviour
             {
                 case BodyState.NEW:
                     flacidBoi = Instantiate(flacidBody);
+                    yield return new WaitForSeconds(0.5f); 
                     AudioManager.instance.PlayScream();
+                    yield return new WaitForSeconds(1f);
+                    AudioManager.instance.PlaySpecificOneShot("Body_fall"); 
                     bodyState = BodyState.CUTTING;
                     break;
 
