@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0438460d922ad45b88427947d4015b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  organ: {fileID: 2861440101181025403}
+  organ: {fileID: 4271577229284360563, guid: 2aa46c6bc9af5a44489849a55a6591d7, type: 3}
   tendonPrefab: {fileID: 1246754521579100761, guid: c9134f367b145574c96862bce57685f8,
     type: 3}
-  maxTendons: 5
+  maxTendons: 4
 --- !u!54 &1685187992916654134
 Rigidbody:
   m_ObjectHideFlags: 0

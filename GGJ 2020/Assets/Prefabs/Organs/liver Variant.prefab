@@ -30,30 +30,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2049782666802440219, guid: a331cea6bc86b2c42a7df4c961443b4c, type: 3}
---- !u!145 &1304997651637684081
-SpringJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4271577229284360563}
-  m_ConnectedBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 1, z: 0}
-  serializedVersion: 2
-  m_Spring: 20
-  m_Damper: 0.2
-  m_MinDistance: 0
-  m_MaxDistance: 0
-  m_Tolerance: 0.025
-  m_BreakForce: 50
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!120 &8907934022171423910
+--- !u!120 &5420150282647244218
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +178,7 @@ PrefabInstance:
     - target: {fileID: 7511054068284829316, guid: 33eb30ff47839714eb7a5d66ac223d68,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7511054068284829316, guid: 33eb30ff47839714eb7a5d66ac223d68,
         type: 3}
@@ -256,17 +233,17 @@ PrefabInstance:
     - target: {fileID: 7511054068284829316, guid: 33eb30ff47839714eb7a5d66ac223d68,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7511054068284829316, guid: 33eb30ff47839714eb7a5d66ac223d68,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7511054068284829316, guid: 33eb30ff47839714eb7a5d66ac223d68,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33eb30ff47839714eb7a5d66ac223d68, type: 3}
