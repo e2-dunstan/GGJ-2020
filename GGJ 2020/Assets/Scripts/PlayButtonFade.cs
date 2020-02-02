@@ -50,6 +50,7 @@ public class PlayButtonFade : MonoBehaviour
         ftw.color = endColour;
         AudioManager.instance.nextMusic(); 
         SceneManager.LoadScene(1);
+        bodyboi.instance.StartGame(); 
         yield return null;
     }
 }

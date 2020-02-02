@@ -23,7 +23,10 @@ public class bodyboi : MonoBehaviour
     void Start()
     {
         if (!instance) instance = this;
-        StartCoroutine("GameLoop"); 
+    }
+    public void StartGame()
+    {
+        StartCoroutine("GameLoop");
     }
 
     private void Update()

@@ -26,13 +26,16 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        quipTimer += Time.deltaTime;
-
-        if (quipTimer > quipTimerDelay)
+        if (musicnum == 1)
         {
-            quipTimerDelay = Random.Range(10, 20);
-            PlayQuip();
-            quipTimer = 0.0f;
+            quipTimer += Time.deltaTime;
+
+            if (quipTimer > quipTimerDelay)
+            {
+                quipTimerDelay = Random.Range(10, 20);
+                PlayQuip();
+                quipTimer = 0.0f;
+            }
         }
     }
     public void nextMusic()
