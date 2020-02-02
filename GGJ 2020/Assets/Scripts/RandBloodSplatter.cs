@@ -26,7 +26,7 @@ public class RandBloodSplatter : MonoBehaviour
             col.a *= 0.99f;
             img.color = col;
 
-            if (img.color.a == 0)
+            if (img.color.a < 0.01f)
                 Destroy(gameObject);
         }
     }
