@@ -58,6 +58,7 @@ public class bodyboi : MonoBehaviour
             {
                 case BodyState.NEW:
                     flacidBoi = Instantiate(flacidBody);
+                    AudioManager.instance.PlayScream();
                     bodyState = BodyState.CUTTING;
                     break;
 

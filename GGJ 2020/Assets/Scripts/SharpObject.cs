@@ -41,6 +41,9 @@ public class SharpObject : MonoBehaviour
                 GameObject blood = Instantiate(bloodPrefab, bladePoint.position, Quaternion.identity);
                 blood.transform.parent = other.gameObject.transform;
                 UIManager.instance.NewBloodSplatter();
+
+                if (other.GetComponent<HandMovement>())
+                    AudioManager.instance.OuchNoise();
             }
         }
     }

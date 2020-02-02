@@ -63,27 +63,27 @@ public class HandMovement : MonoBehaviour
 
     private void GetInput()
     {
-        if (Input.GetButtonDown(startButtonString))
-        {
-            if (playing)
-            {
-                playing = false;
-                foreach (Transform child in transform)
-                {
-                    child.gameObject.SetActive(false);
-                }
-            }
-            else
-            {
-                playing = true;
-                gameObject.transform.position = spawnPos;
+        //if (Input.GetButtonDown(startButtonString))
+        //{
+        //    if (playing)
+        //    {
+        //        playing = false;
+        //        foreach (Transform child in transform)
+        //        {
+        //            child.gameObject.SetActive(false);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        playing = true;
+        //        gameObject.transform.position = spawnPos;
 
-                foreach (Transform child in transform)
-                {
-                    child.gameObject.SetActive(true);
-                }
-            }
-        }
+        //        foreach (Transform child in transform)
+        //        {
+        //            child.gameObject.SetActive(true);
+        //        }
+        //    }
+        //}
     }
 
     private void GrabInput()

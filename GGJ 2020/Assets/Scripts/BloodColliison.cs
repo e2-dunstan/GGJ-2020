@@ -18,6 +18,8 @@ public class BloodColliison : MonoBehaviour
         collisionEvents = new List<ParticleCollisionEvent>();
 
         StartCoroutine("BloodFade", GetComponent<ParticleSystem>());
+
+        AudioManager.instance.SplatFX();
     }
 
     void Update()
