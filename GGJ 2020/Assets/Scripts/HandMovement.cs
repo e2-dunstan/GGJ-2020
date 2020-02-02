@@ -30,6 +30,9 @@ public class HandMovement : MonoBehaviour
 
     private Vector3 spawnPos;
 
+    [SerializeField] Transform min;
+    [SerializeField] Transform max;
+
     private bool playing = false;
 
     // Start is called before the first frame update
@@ -149,6 +152,10 @@ public class HandMovement : MonoBehaviour
 
         transform.position = depthMove;
 
+        //Clamp position
+        transform.position = ClampedPosition(transform.position);
+
+
         if (grabbing)
         {
             if (itemTouching)
@@ -156,6 +163,13 @@ public class HandMovement : MonoBehaviour
                 itemTouching.gameObject.transform.position = grabPos.position;
             }
         }
+    }
+
+    private Vector3 ClampedPosition(Vector3 pos)
+    {
+        pos.x = Mathf.Clamp(pos.x, min.position.x, max.position.x);
+        pos.z = Mathf.Clamp(pos.z, min.position.z, max.position.z);
+        return pos;
     }
 
     private void GetMovementInput()
