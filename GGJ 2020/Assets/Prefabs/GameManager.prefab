@@ -86,7 +86,11 @@ MonoBehaviour:
   music:
   - {fileID: 8300000, guid: 5b0c8aafd5c3d8644934b4b77e5fb43c, type: 3}
   - {fileID: 8300000, guid: cfc8cf1842372ee47a2165217c4a7cb3, type: 3}
-  oneShots: []
+  oneShots:
+  - {fileID: 8300000, guid: ed2285828f0937249b1f2baf12089b9b, type: 3}
+  - {fileID: 8300000, guid: 78d4427dc5fbc014a80993dffabdeefc, type: 3}
+  - {fileID: 8300000, guid: 07f3cc86b6cc7f34baefa1a043151998, type: 3}
+  - {fileID: 8300000, guid: 503e2a72740e09d499c5a40cacf628b2, type: 3}
   screams:
   - {fileID: 8300000, guid: 62642aa704c0646498e926e2cb2d0997, type: 3}
   - {fileID: 8300000, guid: 32dd3aacda33f934082ca4562fb6ed83, type: 3}
@@ -155,9 +159,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 06abff7bf73ace44587a80cbf24184ff, type: 3}
   - {fileID: 8300000, guid: 099d87eb8c35bf94db98734dcf6da36d, type: 3}
   - {fileID: 8300000, guid: f3ba1e03dcae8d3449b919504bd14d6e, type: 3}
-  lostThem:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  slaps:
+  - {fileID: 8300000, guid: f8252760e1c5f3c44a9423dda5338788, type: 3}
+  - {fileID: 8300000, guid: 283fb0dca8691fe4895e85e491e2aa0a, type: 3}
+  - {fileID: 8300000, guid: 40f1dbb707ecdae4d9da4784b0af7e83, type: 3}
+  - {fileID: 8300000, guid: f1a9ddaa850e60b4391f70ec73ac2fda, type: 3}
+  - {fileID: 8300000, guid: 276bc646e00dadf42b09a196a075558b, type: 3}

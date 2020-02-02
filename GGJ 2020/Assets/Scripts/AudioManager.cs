@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] quips;
     public AudioClip[] splats;
     public AudioClip[] cheers;
-    public AudioClip[] lostThem; 
+    public AudioClip[] slaps; 
     public static AudioManager instance;
 
     private float quipTimerDelay = 10.0f;
@@ -93,11 +93,6 @@ public class AudioManager : MonoBehaviour
             int i = Random.Range(0, cheers.Length - 1);
             StartCoroutine(playSound(cheers[i]));
         }
-        else
-        {
-            int i = Random.Range(0, lostThem.Length - 1);
-            StartCoroutine(playSound(lostThem[i]));
-        }
     }
     public void SplatFX()
     {
@@ -108,6 +103,11 @@ public class AudioManager : MonoBehaviour
     {
         int i = Random.Range(0, ouch.Length - 1);
         StartCoroutine(playSound(ouch[i]));
+    }
+    public void HandSlaps()
+    {
+        int i = Random.Range(0, slaps.Length - 1);
+        StartCoroutine(playSound(slaps[i]));
     }
     private IEnumerator playSound(AudioClip clip)
     {
