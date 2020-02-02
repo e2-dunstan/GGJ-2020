@@ -25,6 +25,11 @@ public class HandMovement : MonoBehaviour
     private string verticalAxisString = "Vertical";
     private string LTriggerAxisString = "TriggerL1";
     private string RTriggerAxisString = "TriggerR1";
+    private string startButtonString = "Start1";
+
+    private Vector3 spawnPos;
+
+    private bool playing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,16 +37,49 @@ public class HandMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         rbody = GetComponent<Rigidbody>();        
         startingHeight = transform.position.y;
+        spawnPos = transform.position;
 
         AssignStrings();
+
+        playing = false;
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
     }    
 
     // Update is called once per frame
     void Update()
     {
+        GetInput();
         GrabInput();
         GetMovementInput();
         Movement();
+    }
+
+    private void GetInput()
+    {
+        if (Input.GetButtonDown(startButtonString))
+        {
+            if (playing)
+            {
+                playing = false;
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                playing = true;
+                gameObject.transform.position = spawnPos;
+
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(true);
+                }
+            }
+        }
     }
 
     private void GrabInput()
@@ -163,24 +201,28 @@ public class HandMovement : MonoBehaviour
                 verticalAxisString = "Vertical";
                 LTriggerAxisString = "TriggerL1";
                 RTriggerAxisString = "TriggerR1";
+                startButtonString = "Start1";
                 break;
             case 1:
                 horizontalAxisString = "Horizontal2";
                 verticalAxisString = "Vertical2";
                 LTriggerAxisString = "TriggerL2";
                 RTriggerAxisString = "TriggerR2";
+                startButtonString = "Start2";
                 break;
             case 2:
                 horizontalAxisString = "Horizontal3";
                 verticalAxisString = "Vertical3";
                 LTriggerAxisString = "TriggerL3";
                 RTriggerAxisString = "TriggerR3";
+                startButtonString = "Start3";
                 break;
             case 3:
                 horizontalAxisString = "Horizontal4";
                 verticalAxisString = "Vertical4";
                 LTriggerAxisString = "TriggerL4";
                 RTriggerAxisString = "TriggerR4";
+                startButtonString = "Start4";
                 break;
         }
     }
