@@ -103,7 +103,8 @@ public class HandMovement : MonoBehaviour
                     grabbing = true;
                     itemTouching.transform.parent = gameObject.transform;
                     itemTouching.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                    itemTouching.gameObject.GetComponent<Grabbable>().SetIsGrabbed(true);                    
+                    itemTouching.gameObject.GetComponent<Grabbable>().SetIsGrabbed(true);
+                    itemTouching.gameObject.GetComponent<Grabbable>().SetLastTouchedID(ID);
                 }
             }
         }

@@ -7,6 +7,8 @@ public class Grabbable : MonoBehaviour
 {
     [SerializeField] bool isTool = true;
 
+    private int lastTouchedID = 0;
+
     private Rigidbody rbody;
 
     private bool isGrabbed = false;
@@ -76,6 +78,16 @@ public class Grabbable : MonoBehaviour
             if (boxCollider)
                 boxCollider.enabled = true;
         }
+    }
+
+    public void SetLastTouchedID(int _id)
+    {
+        lastTouchedID = _id;
+    }
+
+    public int GetLastTouchedID()
+    {
+        return lastTouchedID;
     }
 
     public bool GetisTool()
