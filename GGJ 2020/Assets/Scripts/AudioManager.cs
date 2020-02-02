@@ -14,9 +14,26 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] lostThem; 
     public static AudioManager instance;
 
+    private float quipTimerDelay = 10.0f;
+    private float quipTimer = 0.0f;
+
     public void Start()
     {
         if (!instance) instance = this;
+    }
+
+    private void Update()
+    {
+        quipTimer += Time.deltaTime;
+
+        if (quipTimer > quipTimerDelay)
+        {
+            quipTimer = 0.0f;
+
+            PlayQuip();
+
+            quipTimerDelay = Random.Range(10, 20);
+        }
     }
     public void PlaySpecificOneShot(string soundName)
     {
