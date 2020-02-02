@@ -34,6 +34,14 @@ public class Button : MonoBehaviour
 
     void Done()
     {
+        if (GameManager.Instance.GetBodyState() == true)
+        {
+            AudioManager.instance.PlaySpecificOneShot("positive_ding");
+        }
+        else 
+        {
+            AudioManager.instance.PlaySpecificOneShot("negative_ding2");
+        }
         GameManager.Instance.gameObject.GetComponent<bodyboi>().DoneWithThisOne();
     }
 }

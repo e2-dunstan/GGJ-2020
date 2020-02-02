@@ -25,7 +25,7 @@ public class PlayButtonFade : MonoBehaviour
         {
             playText.color += alphaIncrease;
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetButtonDown("Start1"))
         {
             StartCoroutine(NextScene());
         }
