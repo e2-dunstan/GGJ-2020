@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1533256761701138997}
   - component: {fileID: 1533256761701138996}
   - component: {fileID: 1533256761701139002}
+  - component: {fileID: 3777967276997140188}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -66,3 +67,71 @@ MonoBehaviour:
   dudeSpawner: {fileID: 0}
   ftw: {fileID: 0}
   currentDudeAlive: 0
+--- !u!114 &3777967276997140188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533256761701138999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc053f610966a2c48915c16cd06cd70b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneShots: []
+  screams:
+  - {fileID: 8300000, guid: 62642aa704c0646498e926e2cb2d0997, type: 3}
+  - {fileID: 8300000, guid: 32dd3aacda33f934082ca4562fb6ed83, type: 3}
+  - {fileID: 8300000, guid: 7c36604041a4fc240a803059d5fa57a8, type: 3}
+  - {fileID: 8300000, guid: 30339307e9fe2d74e8e3fc0885a8e520, type: 3}
+  - {fileID: 8300000, guid: 64cc8de4fcfe2af4187eafd3345d590e, type: 3}
+  - {fileID: 8300000, guid: b8186ea9fdd3480418865ff2bd39ac28, type: 3}
+  - {fileID: 8300000, guid: 7eb9fe08ac1ae984d966ab433ae37d5f, type: 3}
+  - {fileID: 8300000, guid: eb88cf4983b495b4bba930c278e85a99, type: 3}
+  - {fileID: 8300000, guid: 0184c6ff6825bf94ab7020240f9df35e, type: 3}
+  - {fileID: 8300000, guid: 851fac9179c83794a8a3ccdbee54ed32, type: 3}
+  - {fileID: 8300000, guid: 90177186563801249b90eebbf908de8c, type: 3}
+  - {fileID: 8300000, guid: f9905384b2bf15b4cb91003e4710360a, type: 3}
+  - {fileID: 8300000, guid: 9b90bf4a002d1674884c5a2f3a638242, type: 3}
+  - {fileID: 8300000, guid: 213b1d174fda7f7468e0bc31387a555d, type: 3}
+  - {fileID: 8300000, guid: 56720e5298dbdff4a9804618e4ffa5d3, type: 3}
+  - {fileID: 8300000, guid: b6f681d9b58009941bd68fa8b755f958, type: 3}
+  - {fileID: 8300000, guid: 8050e9c3dd7cb7f4d968d4164d57cd0f, type: 3}
+  ouch:
+  - {fileID: 8300000, guid: af65a3ec21b182448836b7ac171e50df, type: 3}
+  - {fileID: 8300000, guid: e3ba235ee7cb51140ae99881f65111ca, type: 3}
+  - {fileID: 8300000, guid: ad6bb750de8ae904297883af37a94c33, type: 3}
+  - {fileID: 8300000, guid: 865e8f2028a46804a92032150e15e460, type: 3}
+  quips:
+  - {fileID: 8300000, guid: 7ef4c84338ea1ac43ab0889cfa3efc13, type: 3}
+  - {fileID: 8300000, guid: 2d3496e12cec03043b64b778da14e437, type: 3}
+  - {fileID: 8300000, guid: 21bcafd351365c84d8c39aecf73a01f9, type: 3}
+  - {fileID: 8300000, guid: df32de9598855574a8e4e2d44cb27c69, type: 3}
+  - {fileID: 8300000, guid: cbede12408a00344aa50ed0b451e912e, type: 3}
+  - {fileID: 8300000, guid: 683df6aac07aaad4f8b39e5da8115353, type: 3}
+  - {fileID: 8300000, guid: a1139a18b0c8543499a1c7e8b3f773db, type: 3}
+  - {fileID: 8300000, guid: 0f833e96939cf7542b3bcd2171f2c44f, type: 3}
+  - {fileID: 8300000, guid: 5dc5fccdc717eb94bacb365e58f9b417, type: 3}
+  splats:
+  - {fileID: 8300000, guid: 6d773124f0365a842aa06e27d8c7c059, type: 3}
+  - {fileID: 8300000, guid: 74ae8336dcf30164084ddbdf971ca217, type: 3}
+  - {fileID: 8300000, guid: 3d80adf2c4ed6a149a10d79cb848f888, type: 3}
+  - {fileID: 8300000, guid: d42a842efa32597469b04274bf08eab5, type: 3}
+  - {fileID: 8300000, guid: 567995c063e13f241a5d101e0f25725c, type: 3}
+  - {fileID: 8300000, guid: 6818ac9990fa5b9469ed51b80e115f7d, type: 3}
+  - {fileID: 8300000, guid: 44b62e5598f7d7541b39743bb22fe0ea, type: 3}
+  - {fileID: 8300000, guid: b7665e78cec08db429739035d4def4f6, type: 3}
+  cheers:
+  - {fileID: 8300000, guid: 0ee7a75adfed5c849924108a86068c68, type: 3}
+  - {fileID: 8300000, guid: 8da699c10a250bb4786cbc96f1fafef3, type: 3}
+  - {fileID: 8300000, guid: 628297aa6e385c948acf18bd6fd74a89, type: 3}
+  - {fileID: 8300000, guid: 5a6a937688fee02439778dac0addd4a0, type: 3}
+  - {fileID: 8300000, guid: dc947988251cbe24395a74d7cd0b2a9c, type: 3}
+  - {fileID: 8300000, guid: 04a150d35624dbf41bbaca3b0d1c558e, type: 3}
+  lostThem:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
