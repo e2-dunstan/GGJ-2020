@@ -30,8 +30,8 @@ public class HandMovement : MonoBehaviour
 
     private Vector3 spawnPos;
 
-    [SerializeField] Transform min;
-    [SerializeField] Transform max;
+    private Vector3 min = new Vector3(17, 0, -4);
+    private Vector3 max = new Vector3(22, 0, -1);
 
     private bool playing = false;
 
@@ -45,11 +45,11 @@ public class HandMovement : MonoBehaviour
 
         AssignStrings();
 
-        playing = false;
-        foreach (Transform child in transform)
-        {
-            child.gameObject.SetActive(false);
-        }
+        //playing = false;
+        //foreach (Transform child in transform)
+        //{
+        //    child.gameObject.SetActive(false);
+        //}
     }    
 
     // Update is called once per frame
@@ -167,8 +167,8 @@ public class HandMovement : MonoBehaviour
 
     private Vector3 ClampedPosition(Vector3 pos)
     {
-        pos.x = Mathf.Clamp(pos.x, min.position.x, max.position.x);
-        pos.z = Mathf.Clamp(pos.z, min.position.z, max.position.z);
+        pos.x = Mathf.Clamp(pos.x, min.x, max.x);
+        pos.z = Mathf.Clamp(pos.z, min.z, max.z);
         return pos;
     }
 
