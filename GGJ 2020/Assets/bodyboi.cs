@@ -89,7 +89,7 @@ public class bodyboi : MonoBehaviour
             bodyState = BodyState.HOLEBOY;
         flacidBoi.SetActive(false);
         if (!turgidBoi)
-            turgidBoi = Instantiate(turgidBody, bodySpawnPoint, Quaternion.identity);
+            turgidBoi = Instantiate(turgidBody);
         turgidBoi.transform.GetComponentInChildren<SpawnOrgans>().FillBody();
     }
     public void DoneWithThisOne()
