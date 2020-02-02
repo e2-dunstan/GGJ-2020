@@ -30,8 +30,8 @@ public class HandMovement : MonoBehaviour
 
     private Vector3 spawnPos;
 
-    private Vector3 min = new Vector3(17, 0, -4);
-    private Vector3 max = new Vector3(22, 0, -1);
+    private Vector3 min = new Vector3(18, 0, -3);
+    private Vector3 max = new Vector3(21, 0, -1);
 
     private bool playing = false;
 

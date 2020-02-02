@@ -7,6 +7,8 @@ public class bodyboi : MonoBehaviour
     public static bodyboi instance;
     [SerializeField] private Vector3 bodySpawnPoint;
 
+    private Rigidbody boiRbody;
+
     public enum BodyState
     {
         NEW = 0, CUTTING = 1, HOLEBOY = 2, DONE = 3, DEAD = 4
@@ -63,11 +65,26 @@ public class bodyboi : MonoBehaviour
             {
                 case BodyState.NEW:
                     flacidBoi = Instantiate(flacidBody);
-                    givenScore = false;
+                    givenScore = false;  
+                    
+                    foreach(Transform child in flacidBoi.transform)
+                    {
+                        if (child.GetComponent<Rigidbody>())
+                        {
+                            boiRbody = child.GetComponent<Rigidbody>();
+                            break;
+                        }
+                    }
 
+                    boiRbody.constraints = RigidbodyConstraints.None;
+
+                    yield return new WaitForSeconds(0.5f);
                     AudioManager.instance.PlayScream();
                     yield return new WaitForSeconds(1f);
-                    AudioManager.instance.PlaySpecificOneShot("Body_fall"); 
+                    AudioManager.instance.PlaySpecificOneShot("Body_fall");
+                    boiRbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+                    
+
                     bodyState = BodyState.CUTTING;
                     break;
 
@@ -83,6 +100,9 @@ public class bodyboi : MonoBehaviour
                         bodyState = BodyState.NEW;
                         break;
                     }
+
+                    boiRbody.constraints = RigidbodyConstraints.None;
+
                     flacidBoi.transform.GetChild(1).GetComponent<Rigidbody>().AddForce(new Vector3(25000, 0, 0));
                     //Destroy(flacidBoi, 2f);
                     flacidBoi = null; 
