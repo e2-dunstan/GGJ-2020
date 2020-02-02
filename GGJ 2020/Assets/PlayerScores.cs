@@ -8,11 +8,17 @@ public class PlayerScores : MonoBehaviour
     public static PlayerScores instance;
 
     public Text[] players;
-    public int[] scores;
+    [HideInInspector] public int[] scores = { 0 };
+
+    public Text timer;
+    private int minutes = 2;
+    private int seconds = 30;
 
     private void Awake()
     {
         if (!instance) instance = this;
+
+        StartCoroutine(Timer());
     }
 
     void Update()
@@ -23,5 +29,42 @@ public class PlayerScores : MonoBehaviour
         }
     }
 
+    private IEnumerator Timer()
+    {
+        while (true)
+        {
+            seconds--;
+            if (seconds < 0)
+            {
+                minutes--;
+                if (minutes < 0)
+                {
+                    break;
+                }
+                else
+                {
+                    seconds = 59;
+                }
+            }
 
+            timer.text = TimerText();
+
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
+
+    private string TimerText()
+    {
+        string str = "";
+
+        str += minutes.ToString() + ":";
+        
+        if (seconds < 10)
+        {
+            str += "0";
+        }
+        str += seconds.ToString();
+
+        return str;
+    }
 }
