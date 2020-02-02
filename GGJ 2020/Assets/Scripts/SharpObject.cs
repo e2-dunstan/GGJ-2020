@@ -7,7 +7,7 @@ public class SharpObject : MonoBehaviour
     [SerializeField] GameObject bloodPrefab;
     [SerializeField] Transform bladePoint;
 
-    private float bloodSpawnDelay = 0.1f;
+    private float bloodSpawnDelay = 1.0f;
     private float bloodSpawnTimer = 0.0f;
     private bool spawned = false;
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class SharpObject : MonoBehaviour
     {
         if (!spawned)
         {
-            if (other.tag != "Surface")
+            if (other.tag != "Surface" && other.gameObject != gameObject)
             {
                 spawned = true;
                 GameObject blood = Instantiate(bloodPrefab, bladePoint.position, Quaternion.identity);
