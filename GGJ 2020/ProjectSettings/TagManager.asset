@@ -10,6 +10,7 @@ TagManager:
   - BloodParticle
   - Sharp
   - Foreign
+  - Surface
   layers:
   - Default
   - TransparentFX

@@ -29,19 +29,16 @@ public class BloodColliison : MonoBehaviour
     {
         int numCollisionEvents = particleSystem.GetCollisionEvents(other, collisionEvents);
 
-        if (other.tag != "Blood" && other.tag != "BloodParticle" && other.tag != "Sharp")
+        if (other.tag == "Surface")
         {
-            if (!other.gameObject.GetComponent<Grabbable>())
-            {
-                //GameObject obj = Instantiate(bloodPrefab, collisionEvents[0].intersection, Quaternion.identity);
-                //int y = Random.Range(-360, 360);
-                //rot.y = y;
-                //obj.transform.Rotate(rot);
-            }
+            GameObject obj = Instantiate(bloodPrefab, collisionEvents[0].intersection, Quaternion.identity);
+            int y = Random.Range(-360, 360);
+            rot.y = y;
+            obj.transform.Rotate(rot);
         }
-        else
+        else if (other.gameObject.GetComponent<BloodSetUp>())
         {
-            //other.gameObject.GetComponent<BloodSetUp>().IncreaseBlood();
+            other.gameObject.GetComponent<BloodSetUp>().IncreaseBlood();
         }
     }
 
