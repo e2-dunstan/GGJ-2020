@@ -21,7 +21,13 @@ public class Button : MonoBehaviour
         }
         else
         {
+
             thisButtonMaterial.color = Color.red;
         }
+    }
+
+    void Done()
+    {
+        GameManager.Instance.gameObject.GetComponent<bodyboi>().DoneWithThisOne();
     }
 }

@@ -63,8 +63,11 @@ public class GameManager : MonoSingleton<GameManager>
                 {
                     return false;
                 }
+            case Body.BodyLivingState.ALIVE:
+                {
+                    return false;
+                }
         }
-        Debug.LogError("Shouldn't be here mate - Body is saved btw");
         return false;
     }
 }

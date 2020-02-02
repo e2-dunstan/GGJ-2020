@@ -12,6 +12,7 @@ TagManager:
   - Foreign
   - Surface
   - Organ
+  - Tendon
   layers:
   - Default
   - TransparentFX

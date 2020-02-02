@@ -45,13 +45,17 @@ public class Body : MonoBehaviour
                     }
                 case BodyLivingState.DEAD:
                     {
-                        GameManager.Instance.gameObject.GetComponent<bodyboi>().DoneWithThisOne();
+
                         break;
                     }
                 case BodyLivingState.SAVED:
                     {
                         GameManager.Instance.GiveScore();
-                        GameManager.Instance.gameObject.GetComponent<bodyboi>().DoneWithThisOne();
+                        if (foreignsOutside == foreignsInside)
+                        {
+                            bodyState = BodyLivingState.SAVED;
+                        }
+                        //GameManager.Instance.gameObject.GetComponent<bodyboi>().DoneWithThisOne();
                         break;
                     }
             }
@@ -65,13 +69,17 @@ public class Body : MonoBehaviour
         filled = true;
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collider)
     {
-        if (collision.gameObject.GetComponent<Grabbable>().GetisTool() == true)
+        if (collider.gameObject.GetComponent<Grabbable>() == null)
+        {
+            return;
+        }
+        if (collider.gameObject.GetComponent<Grabbable>().GetisTool() == false)
         {
             partsOutside++;
         }
-        if (collision.gameObject.tag == "Foreign")
+        if (collider.gameObject.tag == "Foreign")
         {
             foreignsOutside++;
         }

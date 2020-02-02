@@ -248,6 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4896399306595584222}
   - component: {fileID: 5418009626494058356}
+  - component: {fileID: 7080206574894912506}
   m_Layer: 0
   m_Name: OpenChest
   m_TagString: Untagged
@@ -284,6 +285,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91287933d586d2a4bb8515312f44a29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partsToRemove: []
-  complete: 0
-  initialised: 0
+  bodyState: 0
+  partsInside: 0
+  partsOutside: 0
+  cuttingComplete: 0
+  filled: 0
+--- !u!65 &7080206574894912506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8478264767114361549}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.26114148, y: 0.41636276, z: 0.16875967}
+  m_Center: {x: -0.004443328, y: 1.2514541, z: 1.9976114}
