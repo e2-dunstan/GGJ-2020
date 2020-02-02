@@ -807,6 +807,7 @@ GameObject:
   - component: {fileID: 809389392}
   - component: {fileID: 809389391}
   - component: {fileID: 809389390}
+  - component: {fileID: 809389394}
   m_Layer: 0
   m_Name: Front Wall
   m_TagString: Untagged
@@ -889,6 +890,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &809389394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809389389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17cf99fa05d4f33488f465e0b0abc471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dudeSpawner: {fileID: 1096425394}
+  totalScore: 0
+  totalScoreText: {fileID: 1998606694900845741}
+  totalScoreText2: {fileID: 1256373707}
+  timer: {fileID: 1998606694900845742}
+  ftw: {fileID: 916569735}
 --- !u!1 &916569735
 GameObject:
   m_ObjectHideFlags: 0
@@ -3193,6 +3212,11 @@ PrefabInstance:
       propertyPath: ftw
       value: 
       objectReference: {fileID: 916569735}
+    - target: {fileID: 1533256761701139002, guid: 04dc01397d4332f479dbda22d0712b19,
+        type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 1998606694900845742}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04dc01397d4332f479dbda22d0712b19, type: 3}
 --- !u!1001 &1998606694900845740
@@ -3317,6 +3341,12 @@ PrefabInstance:
 --- !u!1 &1998606694900845741 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9199487684672428412, guid: 1547ac188508141448602e4fb7d8b1ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1998606694900845740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1998606694900845742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2016658783, guid: 1547ac188508141448602e4fb7d8b1ee,
     type: 3}
   m_PrefabInstance: {fileID: 1998606694900845740}
   m_PrefabAsset: {fileID: 0}

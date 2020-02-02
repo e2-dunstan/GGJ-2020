@@ -17,7 +17,9 @@ public class bodyboi : MonoBehaviour
     public GameObject turgidBody;
 
     private GameObject flacidBoi;
-    private GameObject turgidBoi; 
+    private GameObject turgidBoi;
+
+    private bool givenScore = false;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +63,7 @@ public class bodyboi : MonoBehaviour
             {
                 case BodyState.NEW:
                     flacidBoi = Instantiate(flacidBody);
+                    givenScore = false;
                     AudioManager.instance.PlayScream();
                     bodyState = BodyState.CUTTING;
                     break;
@@ -100,7 +103,11 @@ public class bodyboi : MonoBehaviour
     {
         if (GameManager.Instance.GetBodyState() == true)
         {
-            GameManager.Instance.GiveScore();
+            if (givenScore != true)
+            {
+                givenScore = true;
+                GameManager.Instance.GiveScore();
+            }
         }
         if (turgidBoi)
             Destroy(turgidBoi);

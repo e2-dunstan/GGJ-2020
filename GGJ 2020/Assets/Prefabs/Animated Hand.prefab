@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 1166338703}
   m_Layer: 0
   m_Name: Animated Hand
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -624,8 +624,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   grabPos: {fileID: 1850183133912026323}
-  min: {fileID: 0}
-  max: {fileID: 0}
 --- !u!1 &3884061095606054109
 GameObject:
   m_ObjectHideFlags: 0

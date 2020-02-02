@@ -50,7 +50,7 @@ public class Body : MonoBehaviour
                     }
                 case BodyLivingState.SAVED:
                     {
-                        GameManager.Instance.GiveScore();
+                        //GameManager.Instance.GiveScore();
                         if (foreignsOutside == foreignsInside)
                         {
                             bodyState = BodyLivingState.SAVED;

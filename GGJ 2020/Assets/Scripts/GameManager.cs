@@ -87,6 +87,14 @@ public class GameManager : MonoSingleton<GameManager>
         totalScoreText.SetActive(true);
         totalScoreText2.SetActive(true);
         timer.SetActive(false);
+    }
 
+    public void SetUpBecauseCharlieIsAnAss(DudeSpawner dS, GameObject tst1, GameObject tst2, GameObject _timer, GameObject _ftw)
+    {
+        dudeSpawner = dS;
+        totalScoreText2 = tst1;
+        totalScoreText = tst2;
+        timer = _timer;
+        ftw = _ftw;
     }
 }

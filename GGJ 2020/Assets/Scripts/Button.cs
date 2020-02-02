@@ -28,8 +28,11 @@ public class Button : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GetComponent<Animation>().Play();
-        Done();
+        if (other.gameObject.tag == "Player")
+        {
+            GetComponent<Animation>().Play();
+            Done();
+        }
     }
 
     void Done()
@@ -37,6 +40,7 @@ public class Button : MonoBehaviour
         if (GameManager.Instance.GetBodyState() == true)
         {
             AudioManager.instance.PlaySpecificOneShot("positive_ding");
+            AudioManager.instance.FinishedWithBodySound();
         }
         else 
         {
