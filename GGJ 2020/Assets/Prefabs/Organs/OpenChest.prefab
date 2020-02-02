@@ -263,7 +263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8478264767114361549}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 16.5, y: -3, z: -2.5}
+  m_LocalPosition: {x: 15.6, y: -3.35, z: -2.5}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4064723628813441750}
@@ -284,6 +284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91287933d586d2a4bb8515312f44a29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partsToRemove: []
-  complete: 0
-  initialised: 0
+  bodyState: 0
+  partsInside: 0
+  partsOutside: 0
+  cuttingComplete: 0
+  filled: 0
