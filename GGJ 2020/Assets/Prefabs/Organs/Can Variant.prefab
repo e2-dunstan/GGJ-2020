@@ -59,8 +59,13 @@ PrefabInstance:
     - target: {fileID: 1516621048930313683, guid: 3dc2933d87ea97f43a378f42fe7a7603,
         type: 3}
       propertyPath: m_TagString
-      value: Grabbable
+      value: Surface
       objectReference: {fileID: 0}
+    - target: {fileID: 2039643936787902786, guid: 3dc2933d87ea97f43a378f42fe7a7603,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea200e7753fae2b42964c1afbd249c23, type: 2}
     - target: {fileID: 2546582282434107328, guid: 3dc2933d87ea97f43a378f42fe7a7603,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -131,6 +136,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6717713754514058224, guid: 3dc2933d87ea97f43a378f42fe7a7603,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea200e7753fae2b42964c1afbd249c23, type: 2}
+    - target: {fileID: 8964953772215434816, guid: 3dc2933d87ea97f43a378f42fe7a7603,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea200e7753fae2b42964c1afbd249c23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc2933d87ea97f43a378f42fe7a7603, type: 3}
 --- !u!1 &1544406310587321066 stripped

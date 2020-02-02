@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0438460d922ad45b88427947d4015b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  organ: {fileID: 2305615543263102886, guid: 815da288475068e42b05ead2d5475918, type: 3}
+  organ: {fileID: 7582507683830811846}
   tendonPrefab: {fileID: 1246754521579100761, guid: c9134f367b145574c96862bce57685f8,
     type: 3}
   maxTendons: 4
@@ -115,8 +115,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3000638451806107061, guid: 815da288475068e42b05ead2d5475918,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000638451806107061, guid: 815da288475068e42b05ead2d5475918,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000638451806107061, guid: 815da288475068e42b05ead2d5475918,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401714561028190781, guid: 815da288475068e42b05ead2d5475918,
+        type: 3}
+      propertyPath: isTool
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -6017848288984680045, guid: 815da288475068e42b05ead2d5475918, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 815da288475068e42b05ead2d5475918, type: 3}
+--- !u!1 &7582507683830811846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2305615543263102886, guid: 815da288475068e42b05ead2d5475918,
+    type: 3}
+  m_PrefabInstance: {fileID: 8558329742254066528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6872813300215791317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3000638451806107061, guid: 815da288475068e42b05ead2d5475918,
