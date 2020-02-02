@@ -21,9 +21,12 @@ public class Grabbable : MonoBehaviour
     private CapsuleCollider capsuleCollider;
     private BoxCollider boxCollider;
 
+    private Vector3 initialPosition;
+
     // Start is called before the first frame update
     void Start()
     {
+        initialPosition = this.gameObject.transform.position;
         if (isTool)
             attached = false;
         else
@@ -93,5 +96,10 @@ public class Grabbable : MonoBehaviour
     public bool GetisTool()
     {
         return isTool;
+    }
+
+    public void ResetPosition()
+    {
+        this.transform.position = initialPosition;
     }
 }

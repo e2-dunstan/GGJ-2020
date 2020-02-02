@@ -7,8 +7,10 @@ public class Tool : MonoBehaviour
     public GameObject tool;
     private Vector3 spawn;
 
+
     private void Start()
     {
+
         spawn = transform.GetChild(0).position;
     }
 
@@ -29,4 +31,6 @@ public class Tool : MonoBehaviour
             newTool.transform.position = spawn;
         }
     }
+
+
 }
