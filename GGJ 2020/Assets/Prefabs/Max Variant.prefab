@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06632e972792d334da335f598b5f6747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  appliedRotation: {x: 1, y: 10, z: 0}
 --- !u!1001 &5236071516213567562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,7 +290,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 46ddc88997f96e84789f2f08b923727d,
         type: 3}
       propertyPath: m_Name
-      value: Max
+      value: Max Variant
       objectReference: {fileID: 0}
     - target: {fileID: 9172969250186511577, guid: 46ddc88997f96e84789f2f08b923727d,
         type: 3}

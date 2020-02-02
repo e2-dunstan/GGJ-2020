@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spinning : MonoBehaviour
 {
     private float angle = 0;
-    private Vector3 appliedRotation = new Vector3(0.01f, 0.05f, 0);
+    public Vector3 appliedRotation = new Vector3(1f, 5f, 0);
 
     void Start()
     {
@@ -14,6 +14,6 @@ public class Spinning : MonoBehaviour
 
     void Update()
     {
-        this.gameObject.transform.Rotate(appliedRotation);
+        this.gameObject.transform.Rotate(appliedRotation * Time.deltaTime);
     }
 }
