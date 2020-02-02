@@ -5,10 +5,11 @@ using UnityEngine;
 public class bodyboi : MonoBehaviour
 {
     public static bodyboi instance;
+    [SerializeField] private Vector3 bodySpawnPoint;
 
     public enum BodyState
     {
-        NEW = 0, CUTTING = 1, HOLEBOY = 2, DONE = 3
+        NEW = 0, CUTTING = 1, HOLEBOY = 2, DONE = 3, DEAD = 4
     }
 
     public BodyState bodyState = BodyState.NEW;
@@ -40,7 +41,9 @@ public class bodyboi : MonoBehaviour
                     DoneWithThisOne(); 
                     break;
                 case BodyState.DONE:
-                    break; 
+                    break;
+                case BodyState.DEAD:
+                    break;
             }
         }
     }
@@ -86,7 +89,7 @@ public class bodyboi : MonoBehaviour
             bodyState = BodyState.HOLEBOY;
         flacidBoi.SetActive(false);
         if (!turgidBoi)
-            turgidBoi = Instantiate(turgidBody);
+            turgidBoi = Instantiate(turgidBody, bodySpawnPoint, Quaternion.identity);
         turgidBoi.transform.GetComponentInChildren<SpawnOrgans>().FillBody();
     }
     public void DoneWithThisOne()

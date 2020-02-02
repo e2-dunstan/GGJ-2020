@@ -523,6 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb9af2e756cc534e8b5260b13606adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodySpawnPoint: {x: 0, y: 0, z: 0}
   bodyState: 0
   flacidBody: {fileID: 4450326232498647241, guid: 063ff46b2d510c94db03ebd892e2dbda,
     type: 3}
@@ -1225,7 +1226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208647887}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 19.54, y: 9.32, z: -2.6}
+  m_LocalPosition: {x: 19.71, y: 9.32, z: -2.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

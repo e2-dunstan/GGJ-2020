@@ -22,7 +22,7 @@ public class BodyManager : MonoBehaviour
 
     public void BringIn()
     {
-        if (GaeManager.instance.currentBody != null) { GaeManager.instance.currentBody.complete = true; }
+        if (GaeManager.instance.currentBody != null) { GaeManager.instance.currentBody.cuttingComplete = true; }
         GaeManager.instance.currentBody = GetNew();
         if (GaeManager.instance.currentBody == null)
         {
@@ -75,7 +75,7 @@ public class BodyManager : MonoBehaviour
     {
         for(int i = 0; i < bodies.Length; i++)
         {
-            if (!bodies[i].complete) return bodies[i];
+            if (!bodies[i].cuttingComplete) return bodies[i];
         }
         return null;
     }

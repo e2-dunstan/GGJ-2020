@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTool: 1
+  isForeign: 0
 --- !u!120 &4311789812594921375
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -252,6 +253,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linePrefab: {fileID: 6467331001594087770, guid: 045fc0df3d6cb5b40a543af9adcc38c3,
     type: 3}
+  clothPrefab: {fileID: 3483815155817095313, guid: 23d4d3fc7ef62d04e94326553b15efba,
+    type: 3}
   tapeableLayer:
     serializedVersion: 2
     m_Bits: 256
+  chestHeight: 0.1

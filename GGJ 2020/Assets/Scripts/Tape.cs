@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tape : MonoBehaviour
 {
     public GameObject linePrefab;
+    public GameObject clothPrefab; 
     private LineRenderer line = null;
     private Grabbable grabbable;
 
@@ -39,9 +40,19 @@ public class Tape : MonoBehaviour
         }
         else if (!grabbable.GetIsGrabbed() || (drawing && Input.GetAxis("Submit") == 0))
         {
+            if (line)
+            CreateCloth(line);
             line = null;
             drawing = false;
         }
+    }
+
+    private void CreateCloth(LineRenderer line)
+    {
+        Vector3 pos = (drawStartEnd[0] + drawStartEnd[1]) / 2;
+        float angle = Mathf.Atan2(drawStartEnd[1].y - drawStartEnd[0].y, drawStartEnd[1].z - drawStartEnd[0].z) * Mathf.Rad2Deg;
+        GameObject cloth = Instantiate(clothPrefab, pos, Quaternion.Euler(0, angle, 0), transform);
+        Destroy(line); 
     }
 
     private Vector3 GetPosition()

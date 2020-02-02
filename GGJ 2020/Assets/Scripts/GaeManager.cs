@@ -60,7 +60,7 @@ public class GaeManager : MonoBehaviour
 
     private bool DissectionComplete()
     {
-        if (currentBody.complete) return true;
+        if (currentBody.cuttingComplete) return true;
         //for(int i = 0; i < currentBody.partsToRemove.Count; i++)
         //{
         //    if (!currentBody.partsToRemove[i].removed) return false;
