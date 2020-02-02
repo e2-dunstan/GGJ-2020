@@ -16,6 +16,8 @@ public class BloodColliison : MonoBehaviour
     void Start()
     {
         collisionEvents = new List<ParticleCollisionEvent>();
+
+        StartCoroutine("BloodFade", GetComponent<ParticleSystem>());
     }
 
     void Update()
@@ -31,15 +33,34 @@ public class BloodColliison : MonoBehaviour
         {
             if (!other.gameObject.GetComponent<Grabbable>())
             {
-                GameObject obj = Instantiate(bloodPrefab, collisionEvents[0].intersection, Quaternion.identity);
-                int y = Random.Range(-360, 360);
-                rot.y = y;
-                obj.transform.Rotate(rot);
+                //GameObject obj = Instantiate(bloodPrefab, collisionEvents[0].intersection, Quaternion.identity);
+                //int y = Random.Range(-360, 360);
+                //rot.y = y;
+                //obj.transform.Rotate(rot);
             }
         }
         else
         {
-            other.gameObject.GetComponent<BloodSetUp>().IncreaseBlood();
+            //other.gameObject.GetComponent<BloodSetUp>().IncreaseBlood();
+        }
+    }
+
+    IEnumerator BloodFade(ParticleSystem _blood)
+    {
+        ParticleSystem.EmissionModule em = _blood.emission;
+        while (_blood)
+        {
+            ParticleSystem.MinMaxCurve r = em.rateOverTime;
+            r.constantMax *= 0.9f;
+            em.rateOverTime = r;
+
+            if (em.rateOverTime.constantMax < 10)
+            {
+                _blood.Stop();
+                Destroy(_blood.gameObject, 3);
+            }
+
+            yield return new WaitForSeconds(.1f);
         }
     }
 

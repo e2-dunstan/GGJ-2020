@@ -14,7 +14,7 @@ public class HandMovement : MonoBehaviour
     private float horizontalMove = 0.0f;
     private float verticalMove = 0.0f;
 
-    private float movementSpeed = 5.0f;
+    private float movementSpeed = 1.0f;
     private float acceleration = 1.0f;
 
     private Transform itemTouching = null;
@@ -145,6 +145,7 @@ public class HandMovement : MonoBehaviour
         if (collision.gameObject.GetComponent<HandMovement>())
         {
             ResetMovement();
+            ResetGrabbedObject();
             float magnitude = 5f;
             Vector3 force = transform.position - collision.transform.position;
             force.Normalize();

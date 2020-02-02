@@ -22,6 +22,7 @@ public class ChestCutPoint : MonoBehaviour
         if (other.gameObject.tag == "Sharp")
         {
             cutManager.Cut(transform.position, gameObject);
+            this.enabled = false;
         }
     }
 

@@ -28,6 +28,7 @@ public class ChestCutManager : MonoBehaviour
             GameObject point = Instantiate(cutPointPrefab, newPos, Quaternion.identity);
             point.GetComponent<ChestCutPoint>().SetManager(this);
             point.transform.parent = transform;
+            cutPoints.Add(point);
         }
     }
 
@@ -41,7 +42,6 @@ public class ChestCutManager : MonoBehaviour
     {
         GameObject blood = Instantiate(bloodParticle, _pos, Quaternion.identity);
         blood.transform.Rotate(-90, 0, 0);
-        StartCoroutine("BloodFade", blood.GetComponent<ParticleSystem>());
 
         UIManager.instance.NewBloodSplatter();
 
@@ -49,26 +49,18 @@ public class ChestCutManager : MonoBehaviour
 
         if (cutPoints.Count < 1)
         {
-            bodyboi.instance.FinishedCutting();
+            StartCoroutine("FillScreenWithBlood");
         }
     }
 
-    IEnumerator BloodFade(ParticleSystem _blood)
+    IEnumerator FillScreenWithBlood()
     {
-        ParticleSystem.EmissionModule em = _blood.emission;
-        while (_blood)
+        for (int i = 0; i < 20; i++)
         {
-            ParticleSystem.MinMaxCurve r = em.rateOverTime;
-            r.constantMax *= 0.9f;
-            em.rateOverTime = r;
-
-            if (em.rateOverTime.constantMax < 10)
-            {
-                _blood.Stop();
-                Destroy(_blood, 3);
-            }
-
-            yield return new WaitForSeconds(.1f);
+            UIManager.instance.NewBloodSplatter();
         }
+
+        yield return new WaitForSeconds(0.5f);
+        bodyboi.instance.FinishedCutting();
     }
 }

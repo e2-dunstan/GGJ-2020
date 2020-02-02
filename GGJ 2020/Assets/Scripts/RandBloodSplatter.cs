@@ -7,6 +7,8 @@ public class RandBloodSplatter : MonoBehaviour
 {
     [SerializeField] List<Sprite> splatters = new List<Sprite>();
 
+    private bool on = false;
+
     private Image img;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,15 @@ public class RandBloodSplatter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (on)
+        {
+            Color col = img.color;
+            col.a *= 0.99f;
+            img.color = col;
+
+            if (img.color.a == 0)
+                Destroy(gameObject);
+        }
     }
 
     private void NewSplatter()
@@ -33,6 +43,22 @@ public class RandBloodSplatter : MonoBehaviour
         Vector3 scal = transform.localScale;
         scal.x *= Random.Range(min, max);
         scal.y *= Random.Range(min, max);
-        transform.localScale = scal;
+        transform.localScale = scal * 0.1f;
+
+        StartCoroutine("SizeIncrease", scal);
+
+        on = true;
+    }
+
+    IEnumerator SizeIncrease(Vector3 _scal)
+    {
+        Vector3 newScale = transform.localScale;
+
+        while (transform.localScale.x < _scal.x)
+        {
+            newScale *= 1.3f;
+            transform.localScale = newScale;
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }

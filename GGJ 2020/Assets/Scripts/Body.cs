@@ -10,7 +10,7 @@ public class Body : MonoBehaviour
         public Grabbable obj;
         [HideInInspector] public bool removed = false;
     }
-    [HideInInspector] public List<Part> partsToRemove;
+    [HideInInspector] public List<Part> partsToRemove = new List<Part>();
     [HideInInspector] public bool complete = false;
 
     [HideInInspector] public bool initialised = false;
