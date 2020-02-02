@@ -213,6 +213,7 @@ public class HandMovement : MonoBehaviour
             force.Normalize();
             rbody.AddForce(force * magnitude, ForceMode.Impulse);
             collision.gameObject.GetComponent<Rigidbody>().AddForce(-force * magnitude, ForceMode.Impulse);
+            AudioManager.instance.HandSlaps();
         }
     }
 
