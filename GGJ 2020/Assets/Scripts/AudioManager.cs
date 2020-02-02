@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
 
             if (quipTimer > quipTimerDelay)
             {
-                quipTimerDelay = Random.Range(10, 20);
+                quipTimerDelay = Random.Range(5, 10);
                 PlayQuip();
                 quipTimer = 0.0f;
             }
@@ -63,12 +63,12 @@ public class AudioManager : MonoBehaviour
         audio.clip = music[musicnum];
         audio.loop = true;
         audio.Play();
-        while (audio.volume < 1)
+        while (audio.volume < 0.6f)
         {
             audio.volume += 0.01f;
             yield return null;
         }
-        audio.volume = 1;
+        audio.volume = 0.6f;
         while (true)
         yield return null;
     }
