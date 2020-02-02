@@ -6,6 +6,7 @@ using UnityEngine;
 public class HandMovement : MonoBehaviour
 {
     [SerializeField] int ID = 0;
+    [SerializeField] Transform grabPos;
 
     private Rigidbody rbody;
     private Animator anim;
@@ -146,6 +147,14 @@ public class HandMovement : MonoBehaviour
         depthMove.y = startingHeight - Input.GetAxis(LTriggerAxisString);
 
         transform.position = depthMove;
+
+        if (grabbing)
+        {
+            if (itemTouching)
+            {
+                itemTouching.gameObject.transform.position = grabPos.position;
+            }
+        }
     }
 
     private void GetMovementInput()

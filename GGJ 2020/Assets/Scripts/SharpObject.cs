@@ -7,7 +7,7 @@ public class SharpObject : MonoBehaviour
     [SerializeField] GameObject bloodPrefab;
     [SerializeField] Transform bladePoint;
 
-    private float bloodSpawnDelay = 1.0f;
+    private float bloodSpawnDelay = 0.1f;
     private float bloodSpawnTimer = 0.0f;
     private bool spawned = false;
     // Start is called before the first frame update
