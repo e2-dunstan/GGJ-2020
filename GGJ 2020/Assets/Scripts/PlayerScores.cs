@@ -27,6 +27,10 @@ public class PlayerScores : MonoBehaviour
         {
             players[i].text = scores[i].ToString();
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            GameManager.Instance.NextScene();
+        }
     }
 
     private IEnumerator Timer()

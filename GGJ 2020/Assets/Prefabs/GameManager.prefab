@@ -65,6 +65,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyOnLoad: 0
   dudeSpawner: {fileID: 0}
+  totalScore: 0
+  totalScoreText: {fileID: 0}
+  totalScoreText2: {fileID: 0}
+  timer: {fileID: 0}
   ftw: {fileID: 0}
   currentDudeAlive: 0
 --- !u!114 &3777967276997140188

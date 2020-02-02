@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DudeSpawner : MonoBehaviour
+public class DudeSpawner : MonoSingleton<DudeSpawner>
 {
     [SerializeField]private GameObject dudePrefab;
+    
     public IEnumerator SpawnCompletedDudes()
     {
         for (int i = 0; i < GameManager.Instance.GetScore(); i++)

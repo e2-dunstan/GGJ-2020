@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoSingleton<GameManager>
 {
     [SerializeField] private DudeSpawner dudeSpawner;
-    private int totalScore = 0;
+    public int totalScore = 0;
+    [SerializeField] private GameObject totalScoreText;
+    [SerializeField] private GameObject totalScoreText2;
+    [SerializeField] private GameObject timer;
     private int p1Score = 0;
     private int p2Score = 0;
     private int p3Score = 0;
@@ -29,6 +33,7 @@ public class GameManager : MonoSingleton<GameManager>
         {
             StartCoroutine(dudeSpawner.SpawnCompletedDudes());
         }
+        totalScoreText.GetComponent<Text>().text = totalScore.ToString();
     }
 
     public void NextBody()
@@ -74,6 +79,14 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void NextScene()
     {
-        ftw.GetComponent<FTW>().NextScene();
+        StartCoroutine(ftw.GetComponent<FTW>().NextScene());
+    }
+
+    public void EnableEndUI()
+    {
+        totalScoreText.SetActive(true);
+        totalScoreText2.SetActive(true);
+        timer.SetActive(false);
+
     }
 }

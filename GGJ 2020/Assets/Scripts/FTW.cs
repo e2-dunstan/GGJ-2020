@@ -13,10 +13,6 @@ public class FTW : MonoBehaviour
 
     private void Awake()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Game"))
-        {
-            Camera.main.GetComponent<Animation>().Play();
-        }
     }
 
     public IEnumerator NextScene()
@@ -31,16 +27,21 @@ public class FTW : MonoBehaviour
             yield return null;
         }
         ftw.color = endColour;
-
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Game"))
+        //int scene = SceneManager.GetActiveScene().buildIndex;
+        if (SceneManager.GetActiveScene().buildIndex != 1)
         {
-            Camera.main.gameObject.SetActive(false);
-            secondCamera.GetComponent<AudioListener>().enabled = true;
-            secondCamera.GetComponent<Camera>().enabled = true;
+            SceneManager.LoadScene(1);
         }
         else
         {
-            SceneManager.LoadScene(2);
+            GameManager.Instance.EnableEndUI();
+            StartCoroutine(DudeSpawner.Instance.SpawnCompletedDudes());
+            Camera.main.gameObject.GetComponent<AudioListener>().enabled = false;
+            Camera.main.gameObject.GetComponent<Camera>().enabled = false;
+            secondCamera.GetComponent<Camera>().enabled = true;
+            secondCamera.GetComponent<AudioListener>().enabled = true;
+
+
         }
         yield return null;
     }

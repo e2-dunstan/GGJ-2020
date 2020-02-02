@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class AddSecondCamera : MonoBehaviour
 {
-    private Transform ftwCamera;
+    [SerializeField]private GameObject ftwCamera;
 
     void Start()
     {
-        ftwCamera = gameObject.transform.Find("FTW");
-        ftwCamera.gameObject.GetComponent<FTW>().SetSecondCamera(this.gameObject);
+        ftwCamera.GetComponent<FTW>().SetSecondCamera(this.gameObject);
 
     }
 }
