@@ -13,7 +13,6 @@ public class SharpObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -35,7 +34,7 @@ public class SharpObject : MonoBehaviour
     {
         if (!spawned)
         {
-            if (other.tag != "Surface" && other.tag != "Sharp" && other.gameObject != gameObject)
+            if (other.tag != "Surface" && other.tag != "Sharp" && other.tag != "RespawnLocation" && other.gameObject != gameObject)
             {
                 spawned = true;
                 GameObject blood = Instantiate(bloodPrefab, bladePoint.position, Quaternion.identity);
@@ -47,4 +46,5 @@ public class SharpObject : MonoBehaviour
             }
         }
     }
+
 }

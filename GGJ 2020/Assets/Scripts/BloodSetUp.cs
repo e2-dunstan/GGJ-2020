@@ -39,9 +39,9 @@ public class BloodSetUp : MonoBehaviour
         Color startColour = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
         Color endColour = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
 
-        for (float t = 0.0001f; t < 4.0; t += Time.deltaTime)
+        for (float t = 0.0001f; t < 3.0; t += Time.deltaTime)
         {
-            float progress = t / 4.0f;
+            float progress = t / 3.0f;
             sprite.color = startColour + (endColour - startColour) * progress;
             yield return null;
         }
