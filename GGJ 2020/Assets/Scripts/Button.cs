@@ -26,6 +26,12 @@ public class Button : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        GetComponent<Animation>().Play();
+        Done();
+    }
+
     void Done()
     {
         GameManager.Instance.gameObject.GetComponent<bodyboi>().DoneWithThisOne();
